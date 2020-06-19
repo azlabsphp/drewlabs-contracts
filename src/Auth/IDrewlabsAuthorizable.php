@@ -44,4 +44,18 @@ interface IDrewlabsAuthorizable
      * @return string
      */
     public function permissionGroupPropertyName();
+
+    /**
+     * Return the list of permissions of the current user
+     *
+     * @return string[]|\Drewlabs\Core\Auth\PermissionEntity[]
+     */
+    public function getPermissions();
+
+    /**
+     * Returns the list of roles for the current user
+     *
+     * @return @return string[]|\Drewlabs\Core\Auth\RoleEntity[]
+     */
+    public function getRoles();
 }
