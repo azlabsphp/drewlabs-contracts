@@ -31,7 +31,7 @@ interface IDataProvider
      * @param bool|array $relationQuery
      * @param bool $shouldQueryRelations
      * @param int|null $limit
-     * @return IModelable[]|IModelable|mixed|null
+     * @return IDataProviderQueryResult|Modelable[]|array|mixed
      */
     public function get($query = [], $columns = ['*'], $relationQuery = false, $shouldPaginate = false, $limit = null);
 
