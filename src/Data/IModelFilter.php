@@ -12,7 +12,7 @@ interface IModelFilter
      * @param IModelRepository $repository
      * @return mixed
      */
-    public function apply($model, IModelRepository $repository);
+    public function apply($model, IModelRepository $repository = null);
 
     /**
      * Set the classs $query_criteria property to the value of the parameter
