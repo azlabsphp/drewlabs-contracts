@@ -158,7 +158,7 @@ abstract class AbstractEntityObject implements JsonSerializable
         return $this->attributes[$name];
     }
 
-    private function isNotGuarded($value, bool $load = false)
+    protected function isNotGuarded($value, bool $load = false)
     {
         return $load ? true : !in_array($value, $this->guarded);
     }
