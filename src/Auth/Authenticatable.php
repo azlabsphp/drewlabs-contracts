@@ -56,4 +56,11 @@ interface Authenticatable
      * @return \Laravel\Passport\PersonalAccessTokenResult
      */
     public function createToken($name, array $scopes = []);
+
+    /**
+     * Return the authenticatable user details
+     *
+     * @return mixed
+     */
+    public function getUserDetails();
 }
