@@ -9,7 +9,7 @@ interface IModelFilter
 
     /**
      * @param $model
-     * @param IModelRepository $repository
+     * @param IModelRepository|null $repository
      * @return mixed
      */
     public function apply($model, IModelRepository $repository = null);
