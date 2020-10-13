@@ -7,11 +7,11 @@ use JsonSerializable;
 abstract class AbstractEntityObject implements JsonSerializable
 {
 
-    protected $attributes =  [];
+    protected $___attributes =  [];
 
-    protected $guarded = [];
+    protected $___guarded = [];
 
-    protected $loadGuardedAttributes = false;
+    protected $___loadGuardedAttributes = false;
 
     public function __construct($attributes = [])
     {
@@ -21,7 +21,7 @@ abstract class AbstractEntityObject implements JsonSerializable
 
     public function copyWith(array $attr, $loadGuarded = false)
     {
-        $this->loadGuardedAttributes = $loadGuarded;
+        $this->___loadGuardedAttributes = $loadGuarded;
         list($is_assoc, $values) = $this->loadJsonMappings();
         if ($is_assoc) {
             foreach ($values as $key => $value) {
@@ -33,7 +33,7 @@ abstract class AbstractEntityObject implements JsonSerializable
         } else {
             foreach ($values as $key) {
                 # code...
-                if ( array_key_exists($key, $attr) && $this->isNotGuarded($key, $loadGuarded)) {
+                if (array_key_exists($key, $attr) && $this->isNotGuarded($key, $loadGuarded)) {
                     $this->{$key} = $attr[$key];
                 }
             }
@@ -48,7 +48,7 @@ abstract class AbstractEntityObject implements JsonSerializable
             $values = array_keys($values);
         }
         if (in_array($name, $values)) {
-            return isset($this->attributes[$name]) ? $this->callAttributeSerializer($name) : null;
+            return isset($this->___attributes[$name]) ? $this->callAttributeSerializer($name) : null;
         }
         return null;
     }
@@ -60,7 +60,7 @@ abstract class AbstractEntityObject implements JsonSerializable
             $values = array_keys($values);
         }
         if (in_array($name, $values, true)) {
-            $this->attributes[$name] = $this->callAttributeDeserializer($name, $value);
+            $this->___attributes[$name] = $this->callAttributeDeserializer($name, $value);
             return;
         }
         // throw new \RuntimeException("Invalid property mutator call $name", 1);
@@ -101,7 +101,7 @@ abstract class AbstractEntityObject implements JsonSerializable
      */
     public function attributesToArray()
     {
-        return $this->attributes;
+        return $this->___attributes;
     }
 
     /**
@@ -111,7 +111,7 @@ abstract class AbstractEntityObject implements JsonSerializable
      */
     public function __toString()
     {
-        return implode(', ', $this->attributes);
+        return implode(', ', $this->___attributes);
     }
 
     /**
@@ -121,7 +121,7 @@ abstract class AbstractEntityObject implements JsonSerializable
      */
     public function getLoadGuardedAttributes()
     {
-        return $this->loadGuardedAttributes;
+        return $this->___loadGuardedAttributes;
     }
 
     /**
@@ -155,11 +155,11 @@ abstract class AbstractEntityObject implements JsonSerializable
         if (method_exists($this, 'serialize' . ucfirst($name) . 'Attribute')) {
             return $this->{'serialize' . ucfirst($name) . 'Attribute'}();
         }
-        return $this->attributes[$name];
+        return $this->___attributes[$name];
     }
 
     protected function isNotGuarded($value, bool $load = false)
     {
-        return $load ? true : !in_array($value, $this->guarded);
+        return $load ? true : !in_array($value, $this->___guarded);
     }
 }
