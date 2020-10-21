@@ -5,16 +5,16 @@ namespace Drewlabs\Contracts\Factory;
 interface IFactory
 {
 
- /**
-  * Make a new Factory class
-  * @param mixed $type
-  * @return IFactory
-  */
-    public function make($type);
+  /**
+   * Make a new Factory class
+   * @param mixed $type
+   * @return IFactory
+   */
+  public function make($type = null);
 
-    /**
-     * Resolve the constructed object
-     * @return mixed
-     */
-    public function resolve();
+  /**
+   * Resolve the constructed object
+   * @return mixed
+   */
+  public function resolve();
 }
