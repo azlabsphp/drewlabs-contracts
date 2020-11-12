@@ -2,7 +2,7 @@
 
 namespace Drewlabs\Contracts\Data;
 
-interface ParsableModelInterface
+interface ParseableModelInterface
 {
     /**
      * Returns the fillable properties of the given model
