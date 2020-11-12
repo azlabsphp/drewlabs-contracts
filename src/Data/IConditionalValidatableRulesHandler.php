@@ -2,6 +2,9 @@
 
 namespace Drewlabs\Contracts\Data;
 
+/**
+ * @deprecated v1.1.0-dev-master
+ */
 interface IConditionalValidatableRulesHandler
 {
 

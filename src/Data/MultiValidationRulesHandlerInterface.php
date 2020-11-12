@@ -2,7 +2,7 @@
 
 namespace Drewlabs\Contracts\Data;
 
-interface ValidatableRulesHandlerInterface
+interface MultiValidationRulesHandlerInterface
 {
 
     /**
