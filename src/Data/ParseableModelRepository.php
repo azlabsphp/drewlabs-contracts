@@ -4,6 +4,7 @@ namespace Drewlabs\Contracts\Data;
 
 use Drewlabs\Contracts\Data\DataRepository\Repositories\IModelRepository;
 use Drewlabs\Contracts\Data\DataRepository\Services\IModelAttributesParser;
+use Drewlabs\Contracts\Data\RelatedModelInterface;
 
 interface ParseableModelRepository extends IModelRepository
 {
@@ -11,7 +12,7 @@ interface ParseableModelRepository extends IModelRepository
     /**
      * Set the current repository model
      *
-     * @return ParseableModelInterface|ModelInterface
+     * @return ParseableModelInterface|ModelInterface|RelatedModelInterface
      */
     public function makeModel();
 
