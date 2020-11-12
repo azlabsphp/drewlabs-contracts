@@ -5,7 +5,7 @@ namespace Drewlabs\Contracts\Data;
 interface ModelFiltersInterface
 {
     /**
-     * @param $model
+     * @param mixed $model
      * @return mixed
      */
     public function apply($model);
