@@ -27,4 +27,11 @@ interface ParseableModelRepository extends IModelRepository
      * @return IModelAttributesParser
      */
     public function modelAttributesParser();
+
+    /**
+     * Bind the model attribute parser to the the model respository
+     *
+     * @return static
+     */
+    public function bindAttributesParser(IModelAttributesParser $parser);
 }
