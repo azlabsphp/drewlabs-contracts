@@ -7,10 +7,26 @@ use JsonSerializable;
 abstract class AbstractEntityObject implements JsonSerializable
 {
 
+    /**
+     * Attribute container
+     *
+     * @var array|\ArrayAccess
+     */
     protected $___attributes =  [];
 
+    /**
+     * Defines the properties that should be guarded when serializing the
+     * object to associative array
+     *
+     * @var array
+     */
     protected $___guarded = [];
 
+    /**
+     * Indicated whether the bindings should load guarded properties
+     *
+     * @var boolean
+     */
     protected $___loadGuardedAttributes = false;
 
     public function __construct($attributes = [])
@@ -63,7 +79,6 @@ abstract class AbstractEntityObject implements JsonSerializable
             $this->___attributes[$name] = $this->callAttributeDeserializer($name, $value);
             return;
         }
-        // throw new \RuntimeException("Invalid property mutator call $name", 1);
     }
 
     public function fromStdClass($value)

@@ -3,6 +3,7 @@
 namespace Drewlabs\Contracts\EntityObject;
 
 use Drewlabs\Contracts\Data\IModelable;
+use Drewlabs\Contracts\Data\ModelInterface;
 
 interface IDtoObject extends \JsonSerializable
 {
@@ -17,7 +18,7 @@ interface IDtoObject extends \JsonSerializable
     /**
      * Convert the current form dto object into a form model
      *
-     * @return IModelable
+     * @return IModelable|ModelInterface|mixed
      */
     public function toModel();
 
