@@ -14,12 +14,12 @@ interface IModelAttributesParser
    * @param IParsable|ParseableModelInterface $model
    * @return static
    */
-  public function setModel(IParsable $model);
+  public function setModel($model);
 
   /**
    * Returns the model bein configured or create_new_folder
    *
-   * @return IParsable
+   * @return IParsable|ParseableModelInterface
    */
   public function getModel();
 
