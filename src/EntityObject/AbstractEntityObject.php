@@ -15,12 +15,18 @@ abstract class AbstractEntityObject implements JsonSerializable
     protected $___attributes =  [];
 
     /**
-     * Defines the properties that should be guarded when serializing the
-     * object to associative array
+     * Defines the properties that can not been set using the attr array
      *
      * @var array
      */
     protected $___guarded = [];
+
+    /**
+     * List of properties to hide when jsonSerializing the current object
+     *
+     * @var array
+     */
+    protected $___hidden = [];
 
     /**
      * Indicated whether the bindings should load guarded properties
@@ -99,11 +105,15 @@ abstract class AbstractEntityObject implements JsonSerializable
         list($is_assoc, $values) = $this->loadJsonMappings();
         if ($is_assoc) {
             foreach ($values as $key => $value) {
-                $attributes[$value] = $this->{$key};
+                if (!in_array($key, $this->___hidden)) {
+                    $attributes[$value] = $this->{$key};
+                }
             }
         } else {
             foreach ($values as $key) {
-                $attributes[$key] = $this->{$key};
+                if (!in_array($key, $this->___hidden)) {
+                    $attributes[$key] = $this->{$key};
+                }
             }
         }
         return $attributes;
