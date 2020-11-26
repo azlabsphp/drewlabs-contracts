@@ -126,7 +126,9 @@ abstract class AbstractEntityObject implements JsonSerializable
      */
     public function attributesToArray()
     {
-        return $this->___attributes;
+        return array_filter($this->___attributes, function ($key) {
+            return !in_array($key, $this->___hidden);
+        }, ARRAY_FILTER_USE_KEY);
     }
 
     /**
