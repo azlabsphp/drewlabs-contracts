@@ -159,7 +159,7 @@ abstract class AbstractEntityObject implements JsonSerializable
      */
     protected function loadJsonMappings()
     {
-        return [\is_assoc($this->getJsonableAttributes()), $this->getJsonableAttributes()];
+        return [\drewlabs_core_array_is_assoc($this->getJsonableAttributes()), $this->getJsonableAttributes()];
     }
 
     /**
