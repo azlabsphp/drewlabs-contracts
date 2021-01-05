@@ -44,8 +44,8 @@ interface ClaimsInterface
     /**
      * Returns a payload from the default claims
      *
-     * @param array|null $custom_claims_list
+     * @param array|null $custom_claims
      * @return array
      */
-    public function toPayload(array $custom_claims_list = null);
+    public function toPayload(array $custom_claims = null);
 }
