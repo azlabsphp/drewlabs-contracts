@@ -5,7 +5,7 @@ namespace Drewlabs\Contracts\Jwt;
 use Drewlabs\Contracts\Factory\IFactory;
 use Drewlabs\Contracts\Jwt\IClaims;
 
-interface IPayloadFactory extends IFactory
+interface PayloadFactoryInterface extends IFactory
 {
     /**
      * Returns payload claims instance

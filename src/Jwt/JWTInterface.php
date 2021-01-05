@@ -2,7 +2,7 @@
 
 namespace Drewlabs\Contracts\Jwt;
 
-interface IJWT
+interface JWTInterface
 {
 
  /**

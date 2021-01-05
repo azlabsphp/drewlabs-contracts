@@ -2,7 +2,7 @@
 
 namespace Drewlabs\Contracts\Jwt;
 
-interface ITokenManager
+interface TokenManager
 {
     /**
      * Decode a string and return a payload if successful or throws an exception
@@ -34,4 +34,20 @@ interface ITokenManager
      * @return bool
      */
     public function invalidateToken($token);
+
+
+
+    /**
+     * Payload factory getter
+     *
+     * @return IPayloadFactory
+     */
+    public function payloadFactory();
+
+    /**
+     * Return the generated token string
+     *
+     * @return string
+     */
+    public function getToken();
 }

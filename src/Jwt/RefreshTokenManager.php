@@ -6,7 +6,7 @@ use Drewlabs\Core\Jwt\Exceptions\RefreshTokenExpiredException;
 use Drewlabs\Core\Jwt\Exceptions\RefreshTokenNotFound;
 use Drewlabs\Contracts\Auth\Authenticatable;
 
-interface IRefreshTokenManager
+interface RefreshTokenManager
 {
     /**
      * Generate a refresh token from an authenticatable user

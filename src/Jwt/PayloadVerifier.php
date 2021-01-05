@@ -2,7 +2,7 @@
 
 namespace Drewlabs\Contracts\Jwt;
 
-interface IPayloadVerifier
+interface PayloadVerifier
 {
     /**
      * Check if payload generated from the token decode operation has valid values
