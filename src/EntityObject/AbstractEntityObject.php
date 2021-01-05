@@ -35,32 +35,41 @@ abstract class AbstractEntityObject implements ValueObjectInterface
 
     public function __construct($attributes = [])
     {
-        $this->copyWith($attributes);
+        if (!is_null($attributes)) {
+            $this->setAttributes($attributes);
+        }
     }
 
     /**
      * @inheritDoc
      */
-    public function copyWith(array $attr, $loadGuarded = false)
+    final public function setAttributes(array $attributes, $set_guarded = false)
     {
-        $this->___loadGuardedAttributes = $loadGuarded;
+        $this->___loadGuardedAttributes = $set_guarded;
         list($is_assoc, $values) = $this->loadJsonMappings();
         if ($is_assoc) {
             foreach ($values as $key => $value) {
-                # code...
-                if (array_key_exists($value, $attr) && $this->isNotGuarded($value, $loadGuarded)) {
-                    $this->{$key} = $attr[$value];
+                if (array_key_exists($value, $attributes) && $this->isNotGuarded($value, $set_guarded)) {
+                    $this->{$key} = $attributes[$value];
                 }
             }
         } else {
             foreach ($values as $key) {
-                # code...
-                if (array_key_exists($key, $attr) && $this->isNotGuarded($key, $loadGuarded)) {
-                    $this->{$key} = $attr[$key];
+                if (array_key_exists($key, $attributes) && $this->isNotGuarded($key, $set_guarded)) {
+                    $this->{$key} = $attributes[$key];
                 }
             }
         }
         return $this;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function copyWith(array $attr, $set_guarded = false)
+    {
+        $attributes = array_merge($this->getRawAttributes(), $attr);
+        return (new static)->setAttributes($attributes, $set_guarded);
     }
 
     public function __get($name)
@@ -182,6 +191,11 @@ abstract class AbstractEntityObject implements ValueObjectInterface
     protected function isNotGuarded($value, bool $load = false)
     {
         return $load ? true : !in_array($value, $this->___guarded);
+    }
+
+    final protected function getRawAttributes()
+    {
+        return $this->___attributes;
     }
 
     /**

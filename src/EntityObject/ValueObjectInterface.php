@@ -7,6 +7,15 @@ use JsonSerializable;
 interface ValueObjectInterface extends JsonSerializable
 {
     /**
+     * Provides an implementation that set the object attributes from an array
+     * 
+     * @param array $attributes
+     * @param boolean $set_guarded
+     * @return static
+     */
+    final public function setAttributes(array $attributes, $set_guarded = false);
+
+    /**
      * Get list of properties with their corresponding values
      *
      * @return array
@@ -26,8 +35,8 @@ interface ValueObjectInterface extends JsonSerializable
      * provided attribute array
      *
      * @param array $attr
-     * @param boolean $loadGuarded
-     * @return void
+     * @param boolean $set_guarded
+     * @return static
      */
-    public function copyWith(array $attr, $loadGuarded = false);
+    public function copyWith(array $attr, $set_guarded = false);
 }
