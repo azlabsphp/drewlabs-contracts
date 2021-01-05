@@ -2,9 +2,7 @@
 
 namespace Drewlabs\Contracts\EntityObject;
 
-use JsonSerializable;
-
-abstract class AbstractEntityObject implements JsonSerializable
+abstract class AbstractEntityObject implements ValueObjectInterface
 {
 
     /**
@@ -40,7 +38,9 @@ abstract class AbstractEntityObject implements JsonSerializable
         $this->copyWith($attributes);
     }
 
-
+    /**
+     * @inheritDoc
+     */
     public function copyWith(array $attr, $loadGuarded = false)
     {
         $this->___loadGuardedAttributes = $loadGuarded;
@@ -87,6 +87,9 @@ abstract class AbstractEntityObject implements JsonSerializable
         }
     }
 
+    /**
+     * @inheritDoc
+     */
     public function fromStdClass($value)
     {
         foreach ($value as $key => $value) {
@@ -120,9 +123,7 @@ abstract class AbstractEntityObject implements JsonSerializable
     }
 
     /**
-     * Get list of properties with their corresponding values
-     *
-     * @return array
+     * @inheritDoc
      */
     public function attributesToArray()
     {
@@ -162,13 +163,6 @@ abstract class AbstractEntityObject implements JsonSerializable
         return [\drewlabs_core_array_is_assoc($this->getJsonableAttributes()), $this->getJsonableAttributes()];
     }
 
-    /**
-     * return this list of dynamic attributes that can be set on the ihnerited class
-     *
-     * @return array
-     */
-    abstract protected function getJsonableAttributes();
-
     protected function callAttributeDeserializer($name, $value)
     {
         if (method_exists($this, 'deserialize' . ucfirst($name) . 'Attribute')) {
@@ -189,4 +183,11 @@ abstract class AbstractEntityObject implements JsonSerializable
     {
         return $load ? true : !in_array($value, $this->___guarded);
     }
+
+    /**
+     * return this list of dynamic attributes that can be set on the ihnerited class
+     *
+     * @return array
+     */
+    abstract protected function getJsonableAttributes();
 }
