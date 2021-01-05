@@ -13,7 +13,7 @@ interface ValueObjectInterface extends JsonSerializable
      * @param boolean $set_guarded
      * @return static
      */
-    final public function setAttributes(array $attributes, $set_guarded = false);
+    public function setAttributes(array $attributes, $set_guarded = false);
 
     /**
      * Get list of properties with their corresponding values
