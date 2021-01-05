@@ -21,7 +21,6 @@ interface U2faAuthorizationTokenInterface
      */
     public function fromUser(Authenticatable $user);
 
-
     /**
      * Validate user provided token
      * 
@@ -44,5 +43,12 @@ interface U2faAuthorizationTokenInterface
      * @return string
      */
     public function toString();
+
+    /**
+     * Validate the authorization token provided by the application user
+     *
+     * @throws \RuntimeException
+     */
+    public function validate();
 
 }
