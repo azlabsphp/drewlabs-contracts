@@ -13,11 +13,12 @@ interface TokenManager
 
     /**
      * Generate a Base64 encoded string containning connected user information, the issuser and validation data
-     * @param array|object
+     * 
+     * @param array|object $claims
      * @throws \RuntimeException;
      * @return static
      */
-    public function encodeToken($payload);
+    public function encodeToken($claims);
 
     /**
      * Revalidate a Base64 encoded string containning connected user information, the issuser and validation data
