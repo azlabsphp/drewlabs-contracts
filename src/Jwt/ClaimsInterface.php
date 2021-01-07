@@ -13,13 +13,6 @@ interface ClaimsInterface
     public function getiss();
 
     /**
-     * Returns the payload issuer claim value with https protocol
-     *
-     * @return string
-     */
-    public function getissSSL();
-
-    /**
      * Set the token ttl (in minutes).
      *
      * @param  int  $ttl
