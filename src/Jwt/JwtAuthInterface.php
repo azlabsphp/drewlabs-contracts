@@ -5,6 +5,7 @@ namespace Drewlabs\Contracts\Jwt;
 use Drewlabs\Contracts\Auth\Authenticatable;
 use Drewlabs\Contracts\Auth\IAuthenticatableProvider;
 use Drewlabs\Contracts\Jwt\TokenManager;
+use Psr\Http\Message\ServerRequestInterface as Request;
 
 interface JwtAuthInterface
 {
@@ -59,6 +60,15 @@ interface JwtAuthInterface
      * @return static
      */
     public function setAuthenticatableProvider(IAuthenticatableProvider $user);
+
+    /**
+     * Set the request wrapper object
+     *
+     * @param Request|null $request
+     *
+     * @return static
+     */
+    public function setRequest(Request $request);
 
     /**
      * Get the token manager instance
