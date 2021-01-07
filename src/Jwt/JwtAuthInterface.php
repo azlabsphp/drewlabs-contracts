@@ -66,4 +66,11 @@ interface JwtAuthInterface
      * @return TokenManager
      */
     public function manager();
+    
+    /**
+     * Return an instance of the jwt token payload validator
+     *
+     * @return PayloadVerifier
+     */
+    public function payloadValidator();
 }

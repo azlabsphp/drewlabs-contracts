@@ -3,6 +3,7 @@
 namespace Drewlabs\Contracts\U2fa;
 
 use Drewlabs\Contracts\Auth\Authenticatable;
+use Psr\Http\Message\ServerRequestInterface as Request;
 
 /**
  * @package Drewlabs\Contracts
@@ -22,13 +23,22 @@ interface U2faAuthorizationTokenInterface
     public function fromUser(Authenticatable $user);
 
     /**
-     * Validate user provided token
+     * Set / Load Authorization token from a string
      * 
      * @param string $token
      * 
      * @return static
      */
     public function fromToken($token);
+
+    /**
+     * Set / Load Authorization token from the request instance
+     * 
+     * @param Request $token
+     * 
+     * @return static
+     */
+    public function fromRequest(Request $request);
 
     /**
      * Returned an user instance from the user provided token
@@ -48,6 +58,7 @@ interface U2faAuthorizationTokenInterface
      * Validate the authorization token provided by the application user
      *
      * @throws \RuntimeException
+     * @return static
      */
     public function validate();
 
