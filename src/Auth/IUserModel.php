@@ -19,6 +19,7 @@ interface IUserModel extends IAuthenticatableInstanciatable
      * @return static
      */
     public function fetchUserByCredentials(array $credentials);
+
     /**
      * Update the user remember_token in the data storage
      *
@@ -32,24 +33,21 @@ interface IUserModel extends IAuthenticatableInstanciatable
      * @return string
      */
     public function getUserName();
+
     /**
      * Get the auth model hashed password
      *
      * @return string
      */
     public function getPassword();
+
     /**
      * Get the auth model activatation value
      *
      * @return int
      */
     public function getIsActive();
-    /**
-     * Get the auth model double authentication value
-     *
-     * @return int
-     */
-    public function getDoubleAuthActive();
+
     /**
      * Get the auth model rembering token value
      *

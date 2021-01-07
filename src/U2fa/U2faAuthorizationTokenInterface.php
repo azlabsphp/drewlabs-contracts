@@ -58,6 +58,7 @@ interface U2faAuthorizationTokenInterface
      * Validate the authorization token provided by the application user
      *
      * @throws \RuntimeException
+     * @return static
      */
     public function validate();
 
