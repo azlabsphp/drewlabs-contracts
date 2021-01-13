@@ -63,5 +63,15 @@ interface U2faAuthorizationTokenInterface
      * @return static
      */
     public function validate(Request $request = null);
+    
+    /**
+     * Invalidate the authorization token
+     *
+     * @throws \RuntimeException
+     *
+     * @param string|null $token
+     * @return static
+     */
+    public function invalidate($token = null);
 
 }
