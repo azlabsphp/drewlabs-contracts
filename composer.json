@@ -16,5 +16,10 @@
         "psr-4": {
             "Drewlabs\\Contracts\\": "src/"
         }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "v1.2.x-dev"
+        }
     }
 }
