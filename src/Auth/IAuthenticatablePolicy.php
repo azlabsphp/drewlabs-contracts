@@ -7,8 +7,10 @@ use Drewlabs\Contracts\Auth\Authenticatable as IAuthenticatable;
 interface IAuthenticatablePolicy
 {
     /**
-     * @method
      * Check if the current authenticated user has a certain role
+     * 
+     * @deprecated v1.2 Will be remove in next release
+     * 
      * @param IAuthenticatable
      * @param string $role
      * @return bool
@@ -17,6 +19,9 @@ interface IAuthenticatablePolicy
 
     /**
      * Checks if the current authenticated user has a role in a list of roles
+     * 
+     * @deprecated v1.2 Will be remove in next release
+     * 
      * @param IAuthenticatable
      * @param array[string] $roles
      * @return bool
@@ -25,6 +30,9 @@ interface IAuthenticatablePolicy
 
     /**
      * Checks if the current authenticated user has a permission in it mapping role and permissions
+     * 
+     * @deprecated v1.2 Will be remove in next release
+     * 
      * @param IAuthenticatable
      * @param string|int $permission
      * @return bool
@@ -33,6 +41,9 @@ interface IAuthenticatablePolicy
 
     /**
      * Checks if the current authenticated user has a permission in a list of permission
+     * 
+     * @deprecated v1.2 Will be remove in next release
+     * 
      * @param IAuthenticatable
      * @param array[string] $permissions
      * @return bool
@@ -46,4 +57,64 @@ interface IAuthenticatablePolicy
      * @return boolean
      */
     public function hasAdminRole(IAuthenticatable $user);
+
+    /**
+     * Check if the current authenticated user has a certain authorization group
+     *
+     * @param AuthorizableInterface $user
+     * @param AuthorizationGroupInterface $group
+     * @return boolean
+     */
+    public function  hasAuthorizationGroup(AuthorizableInterface $user, $group);
+
+
+    /**
+     * Checks if the current authenticated user has an authorization group
+     * in a list of authorization group
+     * 
+     * @param AuthorizableInterface
+     * @param array[string] $groups
+     * @return bool
+     */
+    public function hasAuthorizationGroupIn(AuthorizableInterface $user, array $groups);
+
+    /**
+     * Checks if the current authenticated user has all authorization groups
+     * in a list of authorization groups provided
+     * 
+     * @param AuthorizableInterface
+     * @param array[string] $groups
+     * @return bool
+     */
+    public function hasAllAuthorizationGroups(AuthorizableInterface $user, array $groups);
+
+    /**
+     * Check if the current authenticated user has a certain authorization
+     *
+     * @param AuthorizableInterface $user
+     * @param AuthorizationInterface $authorization
+     * @return boolean
+     */
+    public function  hasAuthorization(AuthorizableInterface $user, $authorization);
+
+
+    /**
+     * Checks if the current authenticated user has an authorization
+     * in a list of authorizations provided
+     * 
+     * @param AuthorizableInterface
+     * @param array[string]|AuthorizationInterface[] $authorizations
+     * @return bool
+     */
+    public function hasAuthorizationIn(AuthorizableInterface $user, array $authorizations);
+
+    /**
+     * Checks if the current authenticated user has all authorizations
+     * in a list of authorizations provided
+     * 
+     * @param AuthorizableInterface
+     * @param array[string]|AuthorizationInterface[] $authorizations
+     * @return bool
+     */
+    public function hasAllAuthorizations(AuthorizableInterface $user, array $authorizations);
 }
