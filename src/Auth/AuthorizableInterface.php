@@ -8,14 +8,14 @@ interface AuthorizableInterface extends IDrewlabsAuthorizable
     /**
      * Return the list of authorizations of the instance
      *
-     * @return string[]
+     * @return string[]|AuthorizationInterface[]
      */
-    public function  getAuthorizations();
+    public function getAuthorizations();
 
     /**
      * Return the list of authorization groups of the instance
      *
-     * @return string[]
+     * @return string[]|AuthorizationGroupInterface[]
      */
     public function  getAuthorizationGroups();
 }
