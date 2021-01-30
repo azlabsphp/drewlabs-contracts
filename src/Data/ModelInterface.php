@@ -12,6 +12,7 @@ interface ModelInterface
      * @return mixed
      */
     public function add(array $items);
+
     /**
      * Fetch all data from the data storage with their related relationship
      *
