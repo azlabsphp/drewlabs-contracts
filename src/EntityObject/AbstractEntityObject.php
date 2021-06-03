@@ -169,7 +169,9 @@ abstract class AbstractEntityObject implements ValueObjectInterface
      */
     protected function loadJsonMappings()
     {
-        return [\drewlabs_core_array_is_assoc($this->getJsonableAttributes()), $this->getJsonableAttributes()];
+        $json_attributes = $this->getJsonableAttributes();
+        $is_assoc = array_keys($json_attributes) !== range(0, count($json_attributes) - 1);
+        return [$is_assoc, $json_attributes];
     }
 
     protected function callAttributeDeserializer($name, $value)

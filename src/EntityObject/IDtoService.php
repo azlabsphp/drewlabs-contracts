@@ -2,8 +2,7 @@
 
 namespace Drewlabs\Contracts\EntityObject;
 
-use Drewlabs\Contracts\Data\IModelable;
-use Drewlabs\Contracts\Data\ModelInterface;
+use Drewlabs\Contracts\Data\Model\Model;
 
 interface IDtoService
 {
@@ -16,34 +15,34 @@ interface IDtoService
     public function bindClass($dtoClassName);
 
     /**
-     * Generate a [[IDtoObject]] from a [[IModelable|\stdClass|array]] instance
+     * Generate a [[IDtoObject]] from a [[Model|\stdClass|array]] instance
      *
-     * @param IModelable|ModelInterface|\stdClass|array $model
+     * @param Model|\stdClass|array $model
      * @param bool $with_guarded
      * @return IDtoObject
      */
     public function toObject($model, $with_guarded = false);
 
     /**
-     * Generate a [[IModelable]] from a [[IDtoObject|IDtoObject|\stdClass|array]] instance
+     * Generate a [[Model]] from a [[IDtoObject|IDtoObject|\stdClass|array]] instance
      *
      * @param IDtoObject|\stdClass|array $model
-     * @return IModelable|ModelInterface
+     * @return Model
      */
     public function objectToModel($obj);
 
     /**
-     * Build a [[IModelable[]]] from a [[IDtoObject[]]] instance
+     * Build a [[Model[]]] from a [[IDtoObject[]]] instance
      *
      * @param IDtoObject[] $model
-     * @return IModelable[]|ModelInterface[]
+     * @return Model[]
      */
     public function objectToModelList(array $obj);
 
     /**
-     * Build a list of [[IDtoObject[]]] from a [[IModelable[]]] params
+     * Build a list of [[IDtoObject[]]] from a [[Model[]]] params
      *
-     * @param IModelable[]|ModelInterface[]||\stdClass[]|array[] $values
+     * @param Model[]||\stdClass[]|array[] $values
      * @param bool $with_guarded
      * @return IDtoObject[]
      */
