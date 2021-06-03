@@ -169,8 +169,9 @@ abstract class AbstractEntityObject implements ValueObjectInterface
      */
     protected function loadJsonMappings()
     {
-        $is_assoc = array_keys($this->getJsonableAttributes()) !== range(0, count($this->getJsonableAttributes()) - 1);
-        return [$is_assoc, $this->getJsonableAttributes()];
+        $json_attributes = $this->getJsonableAttributes();
+        $is_assoc = array_keys($json_attributes) !== range(0, count($json_attributes) - 1);
+        return [$is_assoc, $json_attributes];
     }
 
     protected function callAttributeDeserializer($name, $value)
