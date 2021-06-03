@@ -21,9 +21,10 @@ interface DMLProvider
      * Insert a new row to the database from the model public properties/attributes
      *
      * @param array $attributes
+     * @param array|DataProviderHandlerParamsInterface $params
      * @return Model|mixed
      */
-    public function create(Model $model);
+    public function create(Model $model, $params = []);
 
     /**
      * Perform a DELETE operation on the models matching the provided query parameters
@@ -122,9 +123,11 @@ interface DMLProvider
      *
      * @param Model $model
      * @param array|Model $attributes
+     * @param array|DataProviderHandlerParamsInterface $params
+     * @param \Closure|null $dto_transform_fn
      * @return Model
      */
-    public function update(Model $model, $attributes = [], \Closure $dto_transform_fn = null);
+    public function update(Model $model, $attributes = [], $params = [], \Closure $dto_transform_fn = null);
 
     /**
      * Update a model from the database using the provided $id parameter
@@ -133,7 +136,9 @@ interface DMLProvider
      *
      * @param [type] $id
      * @param array $attributes
+     * @param array|DataProviderHandlerParamsInterface $params
+     * @param \Closure|null $dto_transform_fn
      * @return Model
      */
-    public function updateByID($id, $attributes = [], \Closure $dto_transform_fn = null);
+    public function updateByID($id, $attributes = [], $params = [], \Closure $dto_transform_fn = null);
 }
