@@ -2,12 +2,11 @@
 
 namespace Drewlabs\Contracts\Data;
 
-interface RelatedModelInterface
+use Drewlabs\Contracts\Data\Model\Relatable;
+
+/**
+ * @deprecated Will be remove in next major release
+ */
+interface RelatedModelInterface extends Relatable
 {
-    /**
-     * Get the list of configured model relations
-     *
-     * @return string[]
-     */
-    public function getModelRelationLoadersNames();
 }

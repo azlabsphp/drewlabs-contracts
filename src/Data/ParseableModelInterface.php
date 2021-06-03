@@ -2,12 +2,11 @@
 
 namespace Drewlabs\Contracts\Data;
 
-interface ParseableModelInterface
+use Drewlabs\Contracts\Data\Model\Parseable;
+
+/**
+ * @deprecated Will be remove in next major release
+ */
+interface ParseableModelInterface extends Parseable
 {
-    /**
-     * Returns the fillable properties of the given model
-     *
-     * @return array
-     */
-    public function getFillables();
 }

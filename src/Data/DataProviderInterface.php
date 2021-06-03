@@ -2,6 +2,7 @@
 
 namespace Drewlabs\Contracts\Data;
 
+use Drewlabs\Contracts\Data\Model\Model;
 interface DataProviderInterface
 {
 
@@ -10,7 +11,7 @@ interface DataProviderInterface
      *
      * @param array $attributes
      * @param array|DataProviderHandlerParamsInterface $params
-     * @return ModelInterface|ModelInterface[]|boolean
+     * @return Model|mixed
      */
     public function create(array $attributes, $params = []);
 
@@ -31,7 +32,7 @@ interface DataProviderInterface
      * @param bool|array $relationQuery
      * @param bool $shouldQueryRelations
      * @param int|null $limit
-     * @return DataProviderInterfaceQueryResult|ModelInterface[]|array|mixed
+     * @return DataProviderInterfaceQueryResult|mixed
      */
     public function get($query = [], $columns = ['*'], $relationQuery = false, $shouldPaginate = false, $limit = null);
 

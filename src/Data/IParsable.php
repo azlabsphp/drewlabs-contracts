@@ -2,19 +2,9 @@
 
 namespace Drewlabs\Contracts\Data;
 
-interface IParsable
+/**
+ * @deprecated Will be remove in next major release
+ */
+interface IParsable extends ParseableModelInterface
 {
-    /**
-     * Returns the fillable properties of the given model
-     *
-     * @return array
-     */
-    public function getFillables();
-
-    /**
-     * Dictionnary mapping of the fillable entries of the model and the request inputs
-     *
-     * @return array
-     */
-    public function getModelStateMap();
 }

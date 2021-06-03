@@ -4,6 +4,7 @@ namespace Drewlabs\Contracts\Data;
 
 /**
  * @deprecated v1.1.0-dev-master
+ * Use [Drewlabs\Contracts\Data\MultiValidationRulesHandlerInterface] instead
  */
 interface IConditionalValidatableRulesHandler
 {

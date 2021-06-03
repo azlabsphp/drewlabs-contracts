@@ -2,21 +2,11 @@
 
 namespace Drewlabs\Contracts\Data;
 
-interface IRelatableRepository
-{
-    /**
-     * Set identifier for querying relation or not
-     *
-     * @param boolean $value
-     * @return static
-     */
-    public function queryRelation(bool $value = true);
+use Drewlabs\Contracts\Data\DataRepository\Repositories\RelatableRepository;
 
-    /**
-     * load the current model along with the specified related/relationships
-     *
-     * @param string|array $relations
-     * @return static
-     */
-    public function loadWith($relations);
+/**
+ * @deprecated Will be remove in next major release
+ */
+interface IRelatableRepository extends RelatableRepository
+{
 }

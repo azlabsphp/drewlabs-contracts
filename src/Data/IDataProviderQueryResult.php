@@ -2,20 +2,10 @@
 
 namespace Drewlabs\Contracts\Data;
 
-interface IDataProviderQueryResult extends \ArrayAccess
+/** 
+ * @package Drewlabs\Contracts\Data 
+ * @deprecated Will be remove in next major release
+ * */
+interface IDataProviderQueryResult extends DataProviderQueryResultInterface
 {
-    /**
-     * Returns the collection of data returned from the data provider query result
-     *
-     * @return array|mixed
-     */
-    public function getCollection();
-
-    /**
-     * Handler for setting instance items
-     *
-     * @param array|mixed $items
-     * @return static
-     */
-    public function setCollection($items);
 }

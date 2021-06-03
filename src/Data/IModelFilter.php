@@ -2,23 +2,10 @@
 
 namespace Drewlabs\Contracts\Data;
 
-use Drewlabs\Contracts\Data\DataRepository\Repositories\IModelRepository;
 
-interface IModelFilter
+/**
+ * @deprecated Will be remove in next major release
+ */
+interface IModelFilter extends ModelFiltersInterface
 {
-
-    /**
-     * @param $model
-     * @param IModelRepository|null $repository
-     * @return mixed
-     */
-    public function apply($model, IModelRepository $repository = null);
-
-    /**
-     * Set the classs $query_criteria property to the value of the parameter
-     *
-     * @param array $list
-     * @return static
-     */
-    public function setQueryFilters(array $list);
 }
