@@ -23,7 +23,7 @@ interface Model
      *
      * @return string
      */
-    public function getEntity();
+    public function getTable();
 
     /**
      * Convert list of model attributes | properties into array
