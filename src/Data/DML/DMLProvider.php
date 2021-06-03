@@ -1,6 +1,6 @@
 <?php
 
-namespace Drewlabs\Contracts\Data\Filters;
+namespace Drewlabs\Contracts\Data\DML;
 
 use Drewlabs\Contracts\Data\DataProviderHandlerParamsInterface;
 use Drewlabs\Contracts\Data\Model\Model;
