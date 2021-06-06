@@ -82,11 +82,9 @@ interface ModelRepository
     /**
      * Delete record from data storage based on condition
      *
-     * @param array $conditions
-     * @param bool $mass_delete
-     * @return int
+     * @param array ...$args
      */
-    public function delete(array $conditions = array(), bool $mass_delete =  false);
+    public function delete(...$args);
 
     /**
      * Get the current repository model class name
