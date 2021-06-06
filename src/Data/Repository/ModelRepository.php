@@ -45,15 +45,18 @@ interface ModelRepository
     /**
      * Return a new model with the given id
      *
+     * @deprecated v3.0.1 Use the {@see find()} overloaded method that takes in an id
+     * 
      * @param int $id
      * @param array $columns
      * @return mixed
      */
-    public function findById($id, array $columns = array('*'));
+    public function findById(int $id, array $columns = array('*'));
 
     /**
      * Update a given record in the data storage using model id
      *
+     * @deprecated v3.0.1 Use {@see update($id, array $attributes)} method overload instead
      * @param int $id
      * @param array $data
      * @param bool $parse_inputs
@@ -64,12 +67,9 @@ interface ModelRepository
     /**
      * Update a given record in the data storage based on condition
      *
-     * @param array $data
-     * @param array $conditions
-     * @param bool $parse_inputs
-     * @return int
+     * @param array ...$args
      */
-    public function update(array $data, array $conditions = array(), bool $parse_inputs = true, bool $mass_update =  false);
+    public function update(...$args);
 
     /**
      * Delete record from data storage based on model id
