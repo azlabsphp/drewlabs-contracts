@@ -2,15 +2,8 @@
 
 namespace Drewlabs\Contracts\Data\Repository;
 
-/**
- * 
- * @method mixed insert(array $values, bool $parse_inputs = false, $upsert = false, $conditions = array())
- * @method mixed insert(array $values, array $conditions)
- * @method mixed insert(array $values)
- * 
- * @method mixed insertMany(array $values, bool $parse_inputs)
- * @method mixed insertMany(array $values)
- */
+
+/** @package Drewlabs\Contracts\Data\Repository */
 interface ModelRepository
 {
 
@@ -45,11 +38,9 @@ interface ModelRepository
     /**
      * Return a new model matching a certain condition
      *
-     * @param array $conditions
-     * @param array $columns
-     * @return array|mixed
+     * @param array ...$args
      */
-    public function find(array $conditions = array(), array $columns = array('*'));
+    public function find(...$args);
 
     /**
      * Return a new model with the given id
