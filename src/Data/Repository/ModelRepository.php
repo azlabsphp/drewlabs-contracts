@@ -2,6 +2,15 @@
 
 namespace Drewlabs\Contracts\Data\Repository;
 
+/**
+ * 
+ * @method mixed insert(array $values, bool $parse_inputs = false, $upsert = false, $conditions = array())
+ * @method mixed insert(array $values, array $conditions)
+ * @method mixed insert(array $values)
+ * 
+ * @method mixed insertMany(array $values, bool $parse_inputs)
+ * @method mixed insertMany(array $values)
+ */
 interface ModelRepository
 {
 
@@ -23,22 +32,15 @@ interface ModelRepository
 
     /**
      * Add or insert new record to the data storage
-     * @param array $data
-     * @param bool $parse_inputs
-     * @param bool $upsert
-     * @param array $upsertConditions
-     * @return mixed
      */
-    public function insert(array $values, bool $parse_inputs = false, $upsert = false, $upsertConditions = array());
+    public function insert(...$args);
 
     /**
-    * Create many model entries in the data storage
-    *
-    * @param array $values
-    * @param boolean $parse_inputs
-    * @return mixed
-    */
-    public function insertMany(array $values, $parse_inputs = true);
+     * Create many model entries in the data storage
+     *
+     * @param array ...$args
+     */
+    public function insertMany(...$args);
 
     /**
      * Return a new model matching a certain condition
