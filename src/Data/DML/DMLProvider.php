@@ -4,7 +4,20 @@ namespace Drewlabs\Contracts\Data\DML;
 
 use Drewlabs\Contracts\Data\Model\Model;
 
-
+/**
+ * @method \Drewlabs\Contracts\Data\Model\Model|mixed create(array $attributes, $params = [])
+ * @method \Drewlabs\Contracts\Data\Model\Model|mixed create(\Drewlabs\Contracts\Data\Model\Model $model, $params = [])
+ * @method int|mixed delete(array $query, bool $hot_operation = false)
+ * @method boolean delete(int $id)
+ * @method boolean delete(\Drewlabs\Contracts\Data\Model\Model $model)
+ * @method \Drewlabs\Contracts\Data\DataProviderQueryResultInterface|mixed select(array $query = [], array $columns = ['*'], bool $load_relations = false, \Closure $dto_transform_fn = null)
+ * @method \Drewlabs\Contracts\Data\Model\Model|mixed  select(int $id, array $columns = ['*'], bool $load_relations = true, \Closure $dto_transform_fn = null)
+ * @method \Drewlabs\Contracts\Data\Model\Model|mixed  select(string $id, array $columns = ['*'], bool $load_relations = true, \Closure $dto_transform_fn = null)
+ * @method \Drewlabs\Contracts\Data\Model\Model|mixed update(Model $model, array $attributes = [], array $params = [], \Closure $dto_transform_fn = null)
+ * @method int|mixed update(array $query, array $attributes = [], array $params = [])
+ * @method \Drewlabs\Contracts\Data\Model\Model|mixed update(int $id, array $attributes = [], array $params = [], \Closure $dto_transform_fn = null)
+ * @method \Drewlabs\Contracts\Data\Model\Model|mixed update(string $id, array $attributes = [], array $params = [], \Closure $dto_transform_fn = null)
+ */
 interface DMLProvider
 {
     /**
@@ -67,4 +80,13 @@ interface DMLProvider
      * @param array ...$args
      */
     public function update(...$params);
+
+    /**
+     * Run an aggregation method on a query builder result
+     *
+     * @param array $query
+     * @param string $aggregation
+     * @return int|mixed
+     */
+    public function selectAggregate(array $query = [], string $aggregation = 'count');
 }
