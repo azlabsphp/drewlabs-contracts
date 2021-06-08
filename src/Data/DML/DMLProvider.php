@@ -80,4 +80,13 @@ interface DMLProvider
      * @param array ...$args
      */
     public function update(...$params);
+
+    /**
+     * Run an aggregation method on a query builder result
+     *
+     * @param array $query
+     * @param string $aggregation
+     * @return int|mixed
+     */
+    public function selectAggregate(array $query = [], string $aggregation = 'count');
 }
