@@ -2,7 +2,8 @@
 
 namespace Drewlabs\Contracts\EntityObject;
 
-abstract class AbstractEntityObject implements ValueObjectInterface
+/** @package Drewlabs\Contracts\EntityObject */
+abstract class AbstractEntityObject implements ValueObjectInterface, \ArrayAccess
 {
 
     /**
@@ -199,6 +200,46 @@ abstract class AbstractEntityObject implements ValueObjectInterface
     {
         return $this->___attributes;
     }
+
+    #region Array access method definitions
+    /**
+     * {@inheritDoc}
+     */
+    public function offsetExists($offset)
+    {
+        if (is_int($offset)) {
+            return false;
+        }
+        return array_key_exists($offset, $this->___attributes);
+    }
+    /**
+     * {@inheritDoc}
+     */
+    public function offsetGet($offset)
+    {
+        if (is_int($offset)) {
+            return;
+        }
+        return $this->__get($offset);
+    }
+    /**
+     * {@inheritDoc}
+     */
+    public function offsetSet($offset, $value)
+    {
+        if (is_int($offset)) {
+            return;
+        }
+        $this->__set($offset, $value);
+    }
+    /**
+     * {@inheritDoc}
+     */
+    public function offsetUnset($offset)
+    {
+        $this->__set($offset, null);
+    }
+    #endregion ArrayAccess method definitions
 
     /**
      * return this list of dynamic attributes that can be set on the ihnerited class
