@@ -23,6 +23,13 @@ interface ValueObjectInterface extends JsonSerializable, \ArrayAccess
     public function attributesToArray();
 
     /**
+     * Convert the object to an array
+     *
+     * @return array
+     */
+    public function toArray();
+
+    /**
      * Create an instance of @see {{ValueObjectInterface}} from a standard PHP Class
      *
      * @param \stdClass $value

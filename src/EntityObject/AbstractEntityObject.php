@@ -143,6 +143,16 @@ abstract class AbstractEntityObject implements ValueObjectInterface
     }
 
     /**
+     * Convert the object to an array
+     *
+     * @return array
+     */
+    public function toArray()
+    {
+        return $this->attributesToArray();
+    }
+
+    /**
      * @inheritDoc
      *
      * @return string
