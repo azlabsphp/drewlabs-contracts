@@ -4,7 +4,7 @@ namespace Drewlabs\Contracts\EntityObject;
 
 use JsonSerializable;
 
-interface ValueObjectInterface extends JsonSerializable
+interface ValueObjectInterface extends JsonSerializable, \ArrayAccess
 {
     /**
      * Provides an implementation that set the object attributes from an array

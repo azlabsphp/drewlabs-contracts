@@ -3,7 +3,7 @@
 namespace Drewlabs\Contracts\EntityObject;
 
 /** @package Drewlabs\Contracts\EntityObject */
-abstract class AbstractEntityObject implements ValueObjectInterface, \ArrayAccess
+abstract class AbstractEntityObject implements ValueObjectInterface
 {
 
     /**
