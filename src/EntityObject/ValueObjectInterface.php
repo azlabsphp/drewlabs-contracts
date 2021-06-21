@@ -6,14 +6,6 @@ use JsonSerializable;
 
 interface ValueObjectInterface extends JsonSerializable, \ArrayAccess
 {
-    /**
-     * Provides an implementation that set the object attributes from an array
-     * 
-     * @param array $attributes
-     * @param boolean $set_guarded
-     * @return static
-     */
-    public function setAttributes(array $attributes, $set_guarded = false);
 
     /**
      * Get list of properties with their corresponding values

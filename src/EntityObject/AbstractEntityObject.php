@@ -44,7 +44,7 @@ abstract class AbstractEntityObject implements ValueObjectInterface
     /**
      * @inheritDoc
      */
-    final public function setAttributes(array $attributes, $set_guarded = false)
+    final protected function setAttributes(array $attributes, $set_guarded = false)
     {
         $this->___loadGuardedAttributes = $set_guarded;
         list($is_assoc, $values) = $this->loadJsonMappings();
@@ -250,6 +250,18 @@ abstract class AbstractEntityObject implements ValueObjectInterface
         $this->__set($offset, null);
     }
     #endregion ArrayAccess method definitions
+
+    #region magic methods
+    public function __isset($name)
+    {
+        return array_key_exists($name, $this->___attributes) && (null !== $this->___attributes[$name]);
+    }
+
+    public function __unset($name)
+    {
+        return $this->offsetUnset($name);
+    }
+    #endregion magic methods
 
     /**
      * return this list of dynamic attributes that can be set on the ihnerited class
