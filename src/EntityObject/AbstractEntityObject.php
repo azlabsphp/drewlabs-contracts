@@ -2,7 +2,10 @@
 
 namespace Drewlabs\Contracts\EntityObject;
 
-/** @package Drewlabs\Contracts\EntityObject */
+/** 
+ * @deprecated v1.0 Implementation has been migrated to ValueObject class of the core packages
+ * @package Drewlabs\Contracts\EntityObject 
+ * */
 abstract class AbstractEntityObject implements ValueObjectInterface
 {
 
