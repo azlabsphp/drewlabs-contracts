@@ -2,10 +2,10 @@
 
 namespace Drewlabs\Contracts\Data;
 
-use Drewlabs\Contracts\Data\DataRepository\Repositories\RelatableRepository;
+use Drewlabs\Contracts\Data\Repository\RelatableRepository;
 
 /**
- * @deprecated Will be remove in next major release
+ * @deprecated v1.0
  */
 interface IRelatableRepository extends RelatableRepository
 {

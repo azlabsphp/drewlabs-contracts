@@ -4,16 +4,8 @@ namespace Drewlabs\Contracts\EntityObject;
 
 use JsonSerializable;
 
-interface ValueObjectInterface extends JsonSerializable
+interface ValueObjectInterface extends JsonSerializable, \ArrayAccess
 {
-    /**
-     * Provides an implementation that set the object attributes from an array
-     * 
-     * @param array $attributes
-     * @param boolean $set_guarded
-     * @return static
-     */
-    public function setAttributes(array $attributes, $set_guarded = false);
 
     /**
      * Get list of properties with their corresponding values
@@ -21,6 +13,13 @@ interface ValueObjectInterface extends JsonSerializable
      * @return array
      */
     public function attributesToArray();
+
+    /**
+     * Convert the object to an array
+     *
+     * @return array
+     */
+    public function toArray();
 
     /**
      * Create an instance of @see {{ValueObjectInterface}} from a standard PHP Class

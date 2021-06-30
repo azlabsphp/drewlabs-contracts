@@ -4,7 +4,8 @@ namespace Drewlabs\Contracts\Data;
 
 /** 
  * @package Drewlabs\Contracts\Data 
- * @deprecated Will be remove in next major release
+ * 
+ * @deprecated v1.0
  * */
 interface IDataProviderQueryResult extends DataProviderQueryResultInterface
 {

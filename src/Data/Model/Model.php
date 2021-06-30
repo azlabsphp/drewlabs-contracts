@@ -33,6 +33,13 @@ interface Model
     public function attributesToArray();
 
     /**
+     * As the {attributesToArray} method, it returns the model public properties to an associative array
+     *
+     * @return array
+     */
+    public function getAttributes();
+
+    /**
      * Convert a model and it relationships into an array
      *
      * @return array

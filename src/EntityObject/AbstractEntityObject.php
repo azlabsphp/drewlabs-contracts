@@ -2,8 +2,11 @@
 
 namespace Drewlabs\Contracts\EntityObject;
 
-/** @package Drewlabs\Contracts\EntityObject */
-abstract class AbstractEntityObject implements ValueObjectInterface, \ArrayAccess
+/** 
+ * @deprecated v1.0 Implementation has been migrated to ValueObject class of the core packages
+ * @package Drewlabs\Contracts\EntityObject 
+ * */
+abstract class AbstractEntityObject implements ValueObjectInterface
 {
 
     /**
@@ -44,7 +47,7 @@ abstract class AbstractEntityObject implements ValueObjectInterface, \ArrayAcces
     /**
      * @inheritDoc
      */
-    final public function setAttributes(array $attributes, $set_guarded = false)
+    final protected function setAttributes(array $attributes, $set_guarded = false)
     {
         $this->___loadGuardedAttributes = $set_guarded;
         list($is_assoc, $values) = $this->loadJsonMappings();
@@ -140,6 +143,16 @@ abstract class AbstractEntityObject implements ValueObjectInterface, \ArrayAcces
         return array_filter($this->___attributes, function ($key) {
             return !in_array($key, $this->___hidden);
         }, ARRAY_FILTER_USE_KEY);
+    }
+
+    /**
+     * Convert the object to an array
+     *
+     * @return array
+     */
+    public function toArray()
+    {
+        return $this->attributesToArray();
     }
 
     /**
@@ -240,6 +253,18 @@ abstract class AbstractEntityObject implements ValueObjectInterface, \ArrayAcces
         $this->__set($offset, null);
     }
     #endregion ArrayAccess method definitions
+
+    #region magic methods
+    public function __isset($name)
+    {
+        return array_key_exists($name, $this->___attributes) && (null !== $this->___attributes[$name]);
+    }
+
+    public function __unset($name)
+    {
+        return $this->offsetUnset($name);
+    }
+    #endregion magic methods
 
     /**
      * return this list of dynamic attributes that can be set on the ihnerited class

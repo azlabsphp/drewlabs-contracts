@@ -4,7 +4,6 @@ namespace Drewlabs\Contracts\Data\DML;
 
 use Drewlabs\Contracts\Data\Model\Model;
 
-
 interface DMLProvider
 {
     /**
