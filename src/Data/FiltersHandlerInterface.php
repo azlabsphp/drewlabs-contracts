@@ -2,6 +2,7 @@
 
 namespace Drewlabs\Contracts\Data;
 
+use Drewlabs\Contracts\Data\Filters\FiltersInterface;
 
 /**
  * Interface FiltersHandlerInterface
@@ -22,16 +23,16 @@ interface FiltersHandlerInterface
     public function getFilters();
 
     /**
-     * @param ModelFiltersInterface $filter
+     * @param FiltersInterface $filter
      * @return static
      */
-    public function getByFilter(ModelFiltersInterface $filter);
+    public function getByFilter(FiltersInterface $filter);
 
     /**
-     * @param ModelFiltersInterface $filter
+     * @param FiltersInterface $filter
      * @return static
      */
-    public function pushFilter(ModelFiltersInterface $filter);
+    public function pushFilter(FiltersInterface $filter);
 
     /**
      * @return static
