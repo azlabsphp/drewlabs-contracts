@@ -2,6 +2,7 @@
 
 namespace Drewlabs\Contracts\Data;
 
+/** @package Drewlabs\Contracts\Data */
 interface DataProviderHandlerParamsInterface
 {
 
