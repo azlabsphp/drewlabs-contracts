@@ -18,7 +18,7 @@ interface CoreValidator
     /**
      * Validate values based on the provided rules or view model.
      *
-     * @return static
+     * @return self
      */
     public function validate(...$args);
 
