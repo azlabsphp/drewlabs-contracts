@@ -13,14 +13,14 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Validator;
 
-
-interface ValidatableViewModel extends ValidatableMessageInterface
+interface ValidatorFactory
 {
-
     /**
-     * Build a dictionary of validation rules.
+     * Create a fluent/any validator instance.
      *
-     * @return array
+     * @param array ...$args
+     *
+     * @return CoreValidator|mixed
      */
-    public function rules();
+    public function make(...$args);
 }

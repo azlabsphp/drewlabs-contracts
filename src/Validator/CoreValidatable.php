@@ -13,12 +13,12 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Validator;
 
-interface ValidatableMessageInterface
+interface CoreValidatable extends MessageInterface
 {
     /**
-     * Build a dictionary of validation errors messages.
+     * Build a dictionary of validation rules.
      *
      * @return array
      */
-    public function messages();
+    public function rules();
 }

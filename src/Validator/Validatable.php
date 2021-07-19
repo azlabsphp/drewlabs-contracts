@@ -13,10 +13,8 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Validator;
 
-/** @package Drewlabs\Contracts\Validator */
-interface Validatable extends ValidatableViewModel
+interface Validatable extends CoreValidatable
 {
-
     /**
      * Build a dictionary of validation rules to apply when updating the view model.
      *

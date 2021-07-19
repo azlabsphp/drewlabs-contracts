@@ -13,12 +13,12 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Validator;
 
-interface Validator extends CoreValidator
+interface MessageInterface
 {
     /**
-     * Set model rules loader control value.
+     * Build a dictionary of validation errors messages.
      *
-     * @return static
+     * @return array
      */
-    public function setUpdate(bool $value);
+    public function messages();
 }

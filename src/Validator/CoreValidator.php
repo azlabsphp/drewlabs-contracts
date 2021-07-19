@@ -13,19 +13,25 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Validator;
 
-interface ValidationErrorProvider
+interface CoreValidator
 {
     /**
-     * Return an array of errors generated during validation.
+     * Validate values based on the provided rules or view model.
      *
-     * @return array
+     * @return static
      */
-    public function errors();
+    public function validate(...$args);
 
     /**
-     * Checks if the validation fails or not.
+     * Return a boolean value that indicate whether
+     * validation was successful or fails.
      *
      * @return bool
      */
     public function fails();
+
+    /**
+     * Return the list of errors that occurs during validation.
+     */
+    public function errors(): mixed;
 }

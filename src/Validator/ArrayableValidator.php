@@ -13,12 +13,6 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Validator;
 
-interface ArrayableValidator extends ValidationErrorProvider
+interface ArrayableValidator extends CoreValidator
 {
-    /**
-     * Provides validation functionnalities for array inputs.
-     *
-     * @return static|mixed
-     */
-    public function validate(array $values, array $rules, array $messages = []);
 }
