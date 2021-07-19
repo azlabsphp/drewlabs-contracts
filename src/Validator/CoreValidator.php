@@ -18,7 +18,7 @@ interface CoreValidator
     /**
      * Validate values based on the provided rules or view model.
      *
-     * @throws \Drewlabs\Core\Validation\Exceptions\ValidationException
+     * @throws Drewlabs\Core\Validator\Exceptions\ValidationException
      *
      * @return self
      */
