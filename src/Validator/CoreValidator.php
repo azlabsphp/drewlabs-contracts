@@ -32,6 +32,8 @@ interface CoreValidator
 
     /**
      * Return the list of errors that occurs during validation.
+     *
+     * @return mixed
      */
-    public function errors(): mixed;
+    public function errors();
 }
