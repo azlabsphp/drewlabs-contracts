@@ -1,152 +1,166 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of the Drewlabs package.
+ *
+ * (c) Sidoine Azandrew <azandrewdevelopper@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Drewlabs\Contracts\EntityObject;
 
-/** 
+/**
  * @deprecated v1.0 Implementation has been migrated to ValueObject class of the core packages
- * @package Drewlabs\Contracts\EntityObject 
  * */
 abstract class AbstractEntityObject implements ValueObjectInterface
 {
-
     /**
-     * Attribute container
+     * Attribute container.
      *
      * @var array|\ArrayAccess
      */
-    protected $___attributes =  [];
+    protected $___attributes = [];
 
     /**
-     * Defines the properties that can not been set using the attr array
+     * Defines the properties that can not been set using the attr array.
      *
      * @var array
      */
     protected $___guarded = [];
 
     /**
-     * List of properties to hide when jsonSerializing the current object
+     * List of properties to hide when jsonSerializing the current object.
      *
      * @var array
      */
     protected $___hidden = [];
 
     /**
-     * Indicated whether the bindings should load guarded properties
+     * Indicated whether the bindings should load guarded properties.
      *
-     * @var boolean
+     * @var bool
      */
     protected $___loadGuardedAttributes = false;
 
     public function __construct($attributes = [])
     {
-        if (!is_null($attributes)) {
+        if (null !== $attributes) {
             $this->setAttributes($attributes);
         }
     }
 
-    /**
-     * @inheritDoc
-     */
-    final protected function setAttributes(array $attributes, $set_guarded = false)
-    {
-        $this->___loadGuardedAttributes = $set_guarded;
-        list($is_assoc, $values) = $this->loadJsonMappings();
-        if ($is_assoc) {
-            foreach ($values as $key => $value) {
-                if (array_key_exists($value, $attributes) && $this->isNotGuarded($value, $set_guarded)) {
-                    $this->{$key} = $attributes[$value];
-                }
-            }
-        } else {
-            foreach ($values as $key) {
-                if (array_key_exists($key, $attributes) && $this->isNotGuarded($key, $set_guarded)) {
-                    $this->{$key} = $attributes[$key];
-                }
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * @inheritDoc
-     */
-    public function copyWith(array $attr, $set_guarded = false)
-    {
-        $attributes = array_merge($this->getRawAttributes(), $attr);
-        return (new static)->setAttributes($attributes, $set_guarded);
-    }
-
     public function __get($name)
     {
-        list($is_assoc, $values) = $this->loadJsonMappings();
+        [$is_assoc, $values] = $this->loadJsonMappings();
         if ($is_assoc) {
             $values = array_keys($values);
         }
-        if (in_array($name, $values)) {
+        if (\in_array($name, $values, true)) {
             return isset($this->___attributes[$name]) ? $this->callAttributeSerializer($name) : null;
         }
+
         return null;
     }
 
     public function __set($name, $value)
     {
-        list($is_assoc, $values) = $this->loadJsonMappings();
+        [$is_assoc, $values] = $this->loadJsonMappings();
         if ($is_assoc) {
             $values = array_keys($values);
         }
-        if (in_array($name, $values, true)) {
+        if (\in_array($name, $values, true)) {
             $this->___attributes[$name] = $this->callAttributeDeserializer($name, $value);
+
             return;
         }
     }
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return implode(', ', $this->___attributes);
+    }
+
+    //endregion ArrayAccess method definitions
+
+    //region magic methods
+    public function __isset($name)
+    {
+        return \array_key_exists($name, $this->___attributes) && (null !== $this->___attributes[$name]);
+    }
+
+    public function __unset($name)
+    {
+        return $this->offsetUnset($name);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function copyWith(array $attr, $set_guarded = false)
+    {
+        $attributes = array_merge($this->getRawAttributes(), $attr);
+
+        return (new static())->setAttributes($attributes, $set_guarded);
+    }
+
+    /**
+     * {@inheritDoc}
      */
     public function fromStdClass($value)
     {
         foreach ($value as $key => $value) {
-            # code...
+            // code...
             $this->__set($key, $value);
         }
+
         return $this;
     }
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function jsonSerialize()
     {
-        $attributes = array();
-        list($is_assoc, $values) = $this->loadJsonMappings();
+        $attributes = [];
+        [$is_assoc, $values] = $this->loadJsonMappings();
         if ($is_assoc) {
             foreach ($values as $key => $value) {
-                if (!in_array($key, $this->___hidden)) {
+                if (!\in_array($key, $this->___hidden, true)) {
                     $attributes[$value] = $this->{$key};
                 }
             }
         } else {
             foreach ($values as $key) {
-                if (!in_array($key, $this->___hidden)) {
+                if (!\in_array($key, $this->___hidden, true)) {
                     $attributes[$key] = $this->{$key};
                 }
             }
         }
+
         return $attributes;
     }
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function attributesToArray()
     {
         return array_filter($this->___attributes, function ($key) {
-            return !in_array($key, $this->___hidden);
-        }, ARRAY_FILTER_USE_KEY);
+            return !\in_array($key, $this->___hidden, true);
+        }, \ARRAY_FILTER_USE_KEY);
     }
 
     /**
-     * Convert the object to an array
+     * Convert the object to an array.
      *
      * @return array
      */
@@ -156,17 +170,7 @@ abstract class AbstractEntityObject implements ValueObjectInterface
     }
 
     /**
-     * @inheritDoc
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        return implode(', ', $this->___attributes);
-    }
-
-    /**
-     * [[loadGuardedAttributes]] property getter
+     * [[loadGuardedAttributes]] property getter.
      *
      * @return bool
      */
@@ -175,76 +179,43 @@ abstract class AbstractEntityObject implements ValueObjectInterface
         return $this->___loadGuardedAttributes;
     }
 
-    /**
-     * Get a boolean value indicating wheter json attribute definition is an
-     * associative array or not along the list of property mappings
-     *
-     * @return array
-     */
-    protected function loadJsonMappings()
-    {
-        $json_attributes = $this->getJsonableAttributes();
-        $is_assoc = array_keys($json_attributes) !== range(0, count($json_attributes) - 1);
-        return [$is_assoc, $json_attributes];
-    }
+    //region Array access method definitions
 
-    protected function callAttributeDeserializer($name, $value)
-    {
-        if (method_exists($this, 'deserialize' . ucfirst($name) . 'Attribute')) {
-            return $this->{'deserialize' . ucfirst($name) . 'Attribute'}($value);
-        }
-        return $value;
-    }
-
-    protected function callAttributeSerializer($name)
-    {
-        if (method_exists($this, 'serialize' . ucfirst($name) . 'Attribute')) {
-            return $this->{'serialize' . ucfirst($name) . 'Attribute'}();
-        }
-        return $this->___attributes[$name];
-    }
-
-    protected function isNotGuarded($value, bool $load = false)
-    {
-        return $load ? true : !in_array($value, $this->___guarded);
-    }
-
-    final protected function getRawAttributes()
-    {
-        return $this->___attributes;
-    }
-
-    #region Array access method definitions
     /**
      * {@inheritDoc}
      */
     public function offsetExists($offset)
     {
-        if (is_int($offset)) {
+        if (\is_int($offset)) {
             return false;
         }
-        return array_key_exists($offset, $this->___attributes);
+
+        return \array_key_exists($offset, $this->___attributes);
     }
+
     /**
      * {@inheritDoc}
      */
     public function offsetGet($offset)
     {
-        if (is_int($offset)) {
+        if (\is_int($offset)) {
             return;
         }
+
         return $this->__get($offset);
     }
+
     /**
      * {@inheritDoc}
      */
     public function offsetSet($offset, $value)
     {
-        if (is_int($offset)) {
+        if (\is_int($offset)) {
             return;
         }
         $this->__set($offset, $value);
     }
+
     /**
      * {@inheritDoc}
      */
@@ -252,22 +223,77 @@ abstract class AbstractEntityObject implements ValueObjectInterface
     {
         $this->__set($offset, null);
     }
-    #endregion ArrayAccess method definitions
-
-    #region magic methods
-    public function __isset($name)
-    {
-        return array_key_exists($name, $this->___attributes) && (null !== $this->___attributes[$name]);
-    }
-
-    public function __unset($name)
-    {
-        return $this->offsetUnset($name);
-    }
-    #endregion magic methods
 
     /**
-     * return this list of dynamic attributes that can be set on the ihnerited class
+     * {@inheritDoc}
+     */
+    final protected function setAttributes(array $attributes, $set_guarded = false)
+    {
+        $this->___loadGuardedAttributes = $set_guarded;
+        [$is_assoc, $values] = $this->loadJsonMappings();
+        if ($is_assoc) {
+            foreach ($values as $key => $value) {
+                if (\array_key_exists($value, $attributes) && $this->isNotGuarded($value, $set_guarded)) {
+                    $this->{$key} = $attributes[$value];
+                }
+            }
+        } else {
+            foreach ($values as $key) {
+                if (\array_key_exists($key, $attributes) && $this->isNotGuarded($key, $set_guarded)) {
+                    $this->{$key} = $attributes[$key];
+                }
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get a boolean value indicating wheter json attribute definition is an
+     * associative array or not along the list of property mappings.
+     *
+     * @return array
+     */
+    protected function loadJsonMappings()
+    {
+        $json_attributes = $this->getJsonableAttributes();
+        $is_assoc = array_keys($json_attributes) !== range(0, \count($json_attributes) - 1);
+
+        return [$is_assoc, $json_attributes];
+    }
+
+    protected function callAttributeDeserializer($name, $value)
+    {
+        if (method_exists($this, 'deserialize'.ucfirst($name).'Attribute')) {
+            return $this->{'deserialize'.ucfirst($name).'Attribute'}($value);
+        }
+
+        return $value;
+    }
+
+    protected function callAttributeSerializer($name)
+    {
+        if (method_exists($this, 'serialize'.ucfirst($name).'Attribute')) {
+            return $this->{'serialize'.ucfirst($name).'Attribute'}();
+        }
+
+        return $this->___attributes[$name];
+    }
+
+    protected function isNotGuarded($value, bool $load = false)
+    {
+        return $load ? true : !\in_array($value, $this->___guarded, true);
+    }
+
+    final protected function getRawAttributes()
+    {
+        return $this->___attributes;
+    }
+
+    //endregion magic methods
+
+    /**
+     * return this list of dynamic attributes that can be set on the ihnerited class.
      *
      * @return array
      */

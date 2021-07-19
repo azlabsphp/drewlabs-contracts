@@ -1,13 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of the Drewlabs package.
+ *
+ * (c) Sidoine Azandrew <azandrewdevelopper@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Drewlabs\Contracts\Data;
 
-/** @package Drewlabs\Contracts\Data */
 interface DataProviderHandlerParamsInterface
 {
-
     /**
-     * Returns the list of parameters to apply to the repository handler
+     * Returns the list of parameters to apply to the repository handler.
      *
      * @return array
      */

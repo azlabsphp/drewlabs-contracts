@@ -1,23 +1,30 @@
 <?php
 
-namespace Drewlabs\Contracts\Auth;
+declare(strict_types=1);
 
-use Drewlabs\Contracts\Auth\Authenticatable;
+/*
+ * This file is part of the Drewlabs package.
+ *
+ * (c) Sidoine Azandrew <azandrewdevelopper@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Drewlabs\Contracts\Auth;
 
 interface IAuthenticatableInstanciatable
 {
     /**
-     * Get user model from an instance of the Authenticatable class
+     * Get user model from an instance of the Authenticatable class.
      *
-     * @param Authenticatable $authenticatable
      * @return static
      */
     public function fromAuthenticatable(Authenticatable $authenticatable);
 
     /**
-     * Build an authenticatable instance from the curren object
+     * Build an authenticatable instance from the curren object.
      *
-     * @param bool $loadRelations
      * @return Authenticatable
      */
     public function toAuthenticatable(bool $loadRelations = true);

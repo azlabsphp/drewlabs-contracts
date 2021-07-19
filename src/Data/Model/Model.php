@@ -1,49 +1,59 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of the Drewlabs package.
+ *
+ * (c) Sidoine Azandrew <azandrewdevelopper@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Drewlabs\Contracts\Data\Model;
 
 interface Model
 {
     /**
-     * Returns the primaryKey of the given model
+     * Returns the primaryKey of the given model.
      *
      * @return string
      */
     public function getPrimaryKey();
 
     /**
-     * Returns the value of the primary of the model
+     * Returns the value of the primary of the model.
      *
      * @return string
      */
     public function getKey();
 
     /**
-     * Returns the collection associated with the given model
+     * Returns the collection associated with the given model.
      *
      * @return string
      */
     public function getTable();
 
     /**
-     * Convert list of model attributes | properties into array
+     * Convert list of model attributes | properties into array.
      *
      * @return array
      */
     public function attributesToArray();
 
     /**
-     * As the {attributesToArray} method, it returns the model public properties to an associative array
+     * As the {attributesToArray} method, it returns the model public properties to an associative array.
      *
      * @return array
      */
     public function getAttributes();
 
     /**
-     * Convert a model and it relationships into an array
+     * Convert a model and it relationships into an array.
      *
      * @return array
      */
     public function toArray();
-
 }

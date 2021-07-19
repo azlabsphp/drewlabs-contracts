@@ -1,18 +1,29 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of the Drewlabs package.
+ *
+ * (c) Sidoine Azandrew <azandrewdevelopper@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Drewlabs\Contracts\Validator;
 
 interface ValidationErrorProvider
 {
     /**
-     * Return an array of errors generated during validation
+     * Return an array of errors generated during validation.
      *
      * @return array
      */
     public function errors();
 
     /**
-     * Checks if the validation fails or not
+     * Checks if the validation fails or not.
      *
      * @return bool
      */

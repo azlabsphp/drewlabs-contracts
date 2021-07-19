@@ -1,18 +1,28 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of the Drewlabs package.
+ *
+ * (c) Sidoine Azandrew <azandrewdevelopper@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Drewlabs\Contracts\Data;
 
 use Drewlabs\Contracts\Data\Filters\FiltersInterface;
 
 /**
- * Interface FiltersHandlerInterface
- * @package Drewlabs\Contracts\Data
+ * Interface FiltersHandlerInterface.
  */
 interface FiltersHandlerInterface
 {
-
     /**
      * @param bool $status
+     *
      * @return static
      */
     public function skipFilters($status = true);
@@ -23,13 +33,11 @@ interface FiltersHandlerInterface
     public function getFilters();
 
     /**
-     * @param FiltersInterface $filter
      * @return static
      */
     public function getByFilter(FiltersInterface $filter);
 
     /**
-     * @param FiltersInterface $filter
      * @return static
      */
     public function pushFilter(FiltersInterface $filter);
