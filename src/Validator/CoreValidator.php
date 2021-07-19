@@ -18,6 +18,8 @@ interface CoreValidator
     /**
      * Validate values based on the provided rules or view model.
      *
+     * @throws \Drewlabs\Core\Validation\Exception
+     *
      * @return self
      */
     public function validate(...$args);
