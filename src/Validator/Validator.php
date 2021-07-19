@@ -18,7 +18,7 @@ interface Validator extends ValidationErrorProvider
     /**
      * Validate provided dirty input against a set of rules and messages.
      *
-     * @param Validatable|array|string $validatable
+     * @param Validatable|ValidatableViewModel|array $validatable
      * @param array|null               $input
      *
      * @return static
