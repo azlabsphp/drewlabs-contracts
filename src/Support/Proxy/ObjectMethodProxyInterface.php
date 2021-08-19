@@ -2,7 +2,7 @@
 
 namespace Drewlabs\Contracts\Support\Proxy;
 
-interface ObjectProxyInterface
+interface ObjectMethodProxyInterface
 {
     /**
      * Provide a dynamic method proxy interface to the provided object.
