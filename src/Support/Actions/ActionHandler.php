@@ -3,7 +3,6 @@
 namespace Drewlabs\Contracts\Support\Actions;
 
 use Closure;
-
 interface ActionHandler
 {
     /**

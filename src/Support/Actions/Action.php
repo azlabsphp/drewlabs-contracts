@@ -1,8 +1,6 @@
 <?php
 
 namespace Drewlabs\Contracts\Support\Actions;
-
-
 interface Action
 {
     /**
