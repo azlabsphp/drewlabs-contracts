@@ -13,15 +13,16 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\EntityObject;
 
-interface QueryResultDtoInterface extends IDtoService
+use Drewlabs\Contracts\Support\DataTransfertObject\QueryResultInterface;
+
+/**
+ * @deprecated 1.0  Will be remove in next major release (2.0)
+ * 
+ * Use {@link Drewlabs\Contracts\Support\DataTransfertObject\QueryResultInterface} instead
+ *  
+ * @package Drewlabs\Contracts\EntityObject 
+ * 
+ * */
+interface QueryResultDtoInterface extends QueryResultInterface
 {
-    /**
-     * Apply callable transformation algorithm to parameter.
-     *
-     * @param array|DataProviderQueryResultInterface|mixed $values
-     * @param callable|\Closure                            $callback
-     *
-     * @return mixed
-     */
-    public function mapTo($values, callable $callback);
 }

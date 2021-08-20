@@ -13,32 +13,16 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\EntityObject;
 
-use Drewlabs\Contracts\Data\Model\Model;
+use Drewlabs\Contracts\Support\DataTransfertObject\ObjectInterface;
 
-interface IDtoObject extends \JsonSerializable
+/**
+ * @deprecated 1.0  Will be remove in next major release (2.0)
+ * 
+ * This interface has been ported to {@link Drewlabs\Contracts\Support\DataTransfertObject\ObjectInterface}
+ * 
+ * @package Drewlabs\Contracts\EntityObject
+ */
+interface IDtoObject extends ObjectInterface
 {
-    /**
-     * Create an instance of the current class from PHP standard object or array.
-     *
-     * @param \stdClass|array $value
-     *
-     * @return static
-     */
-    public function fromStdClass($value);
-
-    /**
-     * Convert the current form dto object into a form model.
-     *
-     * @return Model|mixed
-     */
-    public function toModel();
-
-    /**
-     * Build the required properties of the current object from params.
-     *
-     * @param bool $loadAll
-     *
-     * @return static
-     */
-    public function copyWith(array $attributes, $loadAll = false);
+    
 }

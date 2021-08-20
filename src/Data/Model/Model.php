@@ -13,7 +13,10 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Data\Model;
 
-interface Model
+use Drewlabs\Contracts\Support\ArrayableInterface;
+
+/** @package Drewlabs\Contracts\Data\Model */
+interface Model extends ArrayableInterface
 {
     /**
      * Returns the primaryKey of the given model.
@@ -49,11 +52,4 @@ interface Model
      * @return array
      */
     public function getAttributes();
-
-    /**
-     * Convert a model and it relationships into an array.
-     *
-     * @return array
-     */
-    public function toArray();
 }

@@ -13,9 +13,17 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\EntityObject;
 
-use Drewlabs\Contracts\Data\Model\Model;
+use Drewlabs\Contracts\Support\DataTransfertObject\ListBridgeInterface;
+use Drewlabs\Contracts\Support\DataTransfertObject\ObjectBridgeInterface;
+use Drewlabs\Contracts\Support\GenericInterface;
 
-interface IDtoService
+/**
+ * @deprecated 1.0  Will be remove in next major release (2.0)
+ * 
+ * Uses <Drewlabs\Contracts\Support\DataTransfertObject\ListBridgeInterface> and <Drewlabs\Contracts\Support\DataTransfertObject\ObjectBridgeInterface> instead
+ * @package Drewlabs\Contracts\EntityObject
+ */
+interface IDtoService extends ObjectBridgeInterface, ListBridgeInterface, GenericInterface
 {
     /**
      * Bind [[IDtoObject]] class string to the current service.
@@ -24,37 +32,4 @@ interface IDtoService
      */
     public function bindClass($dtoClassName);
 
-    /**
-     * Generate a [[IDtoObject]] from a [[Model|\stdClass|array]] instance.
-     *
-     * @param Model|\stdClass|array $model
-     * @param bool                  $with_guarded
-     *
-     * @return IDtoObject
-     */
-    public function toObject($model, $with_guarded = false);
-
-    /**
-     * Generate a [[Model]] from a [[IDtoObject|IDtoObject|\stdClass|array]] instance.
-     *
-     * @return Model
-     */
-    public function objectToModel($obj);
-
-    /**
-     * Build a [[Model[]]] from a [[IDtoObject[]]] instance.
-     *
-     * @return Model[]
-     */
-    public function objectToModelList(array $obj);
-
-    /**
-     * Build a list of [[IDtoObject[]]] from a [[Model[]]] params.
-     *
-     * @param Model[]||\stdClass[]|array[] $values
-     * @param bool                         $with_guarded
-     *
-     * @return IDtoObject[]
-     */
-    public function toObjectList(array $values, $with_guarded = false);
 }
