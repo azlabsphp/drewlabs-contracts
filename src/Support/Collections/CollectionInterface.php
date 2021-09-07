@@ -89,4 +89,16 @@ interface CollectionInterface extends \IteratorAggregate
      * @return self 
      */
     public function combine(array $keys);
+
+    /**
+     * Returns all the elements of the collection in their raw state
+     * @return array 
+     */
+    public function all();
+
+    /**
+     * Returns the number of elements in the collection
+     * @return int 
+     */
+    public function count();
 }
