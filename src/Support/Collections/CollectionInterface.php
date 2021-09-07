@@ -11,7 +11,7 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Drewlabs\Contracts\Collections;
+namespace Drewlabs\Contracts\Support\Collections;
 
 interface CollectionInterface extends \IteratorAggregate
 {
@@ -67,4 +67,26 @@ interface CollectionInterface extends \IteratorAggregate
      * Serialize the instance into it array representation.
      */
     public function toArray(): array;
+
+    /**
+     * Returns the firt item in the collection
+     * 
+     * @return mixed 
+     */
+    public function first();
+
+    /**
+     * Returns the last item in the collection
+     * 
+     * @return mixed 
+     */
+    public function last();
+
+    /**
+     * Combine the user provided keys with the current collection values
+     * 
+     * @param array $keys 
+     * @return self 
+     */
+    public function combine(array $keys);
 }
