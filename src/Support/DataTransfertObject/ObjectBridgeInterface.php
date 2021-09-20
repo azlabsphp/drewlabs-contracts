@@ -25,4 +25,13 @@ interface ObjectBridgeInterface
      * @return ArrayableInterface
      */
     public function objectToModel($obj);
+
+    /**
+     * Bind the output type/object/interface to the bridge class
+     * 
+     * @param string $name
+     * 
+     * @return self
+     */
+    public function bindClass($name);
 }
