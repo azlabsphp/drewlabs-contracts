@@ -28,4 +28,12 @@ interface OverloadedMethodHandler
      * @return bool
      */
     public function matches(array $args = []);
+
+     /**
+      * Call a given function or method with a list of arguments
+      
+      * @param mixed $args 
+      * @return mixed 
+      */
+    public function call($args);
 }
