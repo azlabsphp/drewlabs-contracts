@@ -13,65 +13,8 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Auth;
 
-use Drewlabs\Contracts\Auth\Authenticatable as IAuthenticatable;
-
 interface IAuthenticatablePolicy
 {
-    /**
-     * Check if the current authenticated user has a certain role.
-     *
-     * @deprecated v1.2 Will be remove in next release
-     *
-     * @param IAuthenticatable
-     * @param string $role
-     *
-     * @return bool
-     */
-    public function hasRole(IAuthenticatable $user, $role);
-
-    /**
-     * Checks if the current authenticated user has a role in a list of roles.
-     *
-     * @deprecated v1.2 Will be remove in next release
-     *
-     * @param IAuthenticatable
-     * @param array[string] $roles
-     *
-     * @return bool
-     */
-    public function hasRoleIn(IAuthenticatable $user, array $roles);
-
-    /**
-     * Checks if the current authenticated user has a permission in it mapping role and permissions.
-     *
-     * @deprecated v1.2 Will be remove in next release
-     *
-     * @param IAuthenticatable
-     * @param string|int $permission
-     *
-     * @return bool
-     */
-    public function hasPermission(IAuthenticatable $user, $permission);
-
-    /**
-     * Checks if the current authenticated user has a permission in a list of permission.
-     *
-     * @deprecated v1.2 Will be remove in next release
-     *
-     * @param IAuthenticatable
-     * @param array[string] $permissions
-     *
-     * @return bool
-     */
-    public function hasPermissionIn(IAuthenticatable $user, array $permissions);
-
-    /**
-     * Checks if a given user has an administrator role.
-     *
-     * @return bool
-     */
-    public function hasAdminRole(IAuthenticatable $user);
-
     /**
      * Check if the current authenticated user has a certain authorization group.
      *
