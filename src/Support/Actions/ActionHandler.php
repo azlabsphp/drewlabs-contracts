@@ -12,7 +12,7 @@ interface ActionHandler
      * @param Action $action
      * @param Closure $callback
      * 
-     * @return ActionResult|mixed
+     * @return ActionResult
      */
     public function handle(Action $action, Closure $callback = null);
 }
