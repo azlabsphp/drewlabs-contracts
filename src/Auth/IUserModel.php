@@ -91,4 +91,11 @@ interface IUserModel extends IAuthenticatableInstanciatable
      * @return string
      */
     public function getLoginAttempts();
+
+    /**
+     * Returns the user details attached to the user
+     * 
+     * @return \stdClass 
+     */
+    public function getUserDetails();
 }
