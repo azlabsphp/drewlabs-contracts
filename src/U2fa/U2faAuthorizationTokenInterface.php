@@ -73,5 +73,5 @@ interface U2faAuthorizationTokenInterface
      *
      * @return static
      */
-    public function invalidate($token = null);
+    public function invalidate($token);
 }
