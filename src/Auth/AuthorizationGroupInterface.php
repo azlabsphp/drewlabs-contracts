@@ -18,7 +18,7 @@ interface AuthorizationGroupInterface extends AuthorizationInterface
     /**
      * Return the list of authorizations in the authorization group.
      *
-     * @return array|AuthorizationInterface[]|mixed
+     * @return array|AuthorizationInterface[]
      */
     public function getAuthorizations();
 }
