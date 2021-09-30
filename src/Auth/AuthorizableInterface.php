@@ -28,4 +28,20 @@ interface AuthorizableInterface extends IDrewlabsAuthorizable
      * @return string[]|AuthorizationGroupInterface[]
      */
     public function getAuthorizationGroups();
+
+    /**
+     * Set the list of authorizations on the AuthorizableInterface instance
+     * 
+     * @param array $value 
+     * @return self 
+     */
+    public function  setAuthorizations(array $value = []);
+
+    /**
+     * Set the list of authorizations groups on the AuthorizableInterface instance
+     * 
+     * @param array $value 
+     * @return self 
+     */
+    public function  setAuthorizationGroups(array $value = []);
 }
