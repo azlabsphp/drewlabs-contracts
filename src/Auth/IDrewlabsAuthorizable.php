@@ -44,36 +44,4 @@ interface IDrewlabsAuthorizable
      * @return bool
      */
     public function cannot($ability, $arguments = []);
-
-    /**
-     * returns the property holding the permissions of the authenticatable.
-     *
-     * @return string
-     */
-    public function permissionPropertyName();
-
-    /**
-     * returns property holding permission groups of the authenticatable.
-     *
-     * @return string
-     */
-    public function permissionGroupPropertyName();
-
-    /**
-     * Return the list of permissions of the current user.
-     *
-     * @deprecated v1.2
-     *
-     * @return string[]|array
-     */
-    public function getPermissions();
-
-    /**
-     * Returns the list of roles for the current user.
-     *
-     * @deprecated v1.2
-     *
-     * @return @return string[]|array
-     */
-    public function getRoles();
 }
