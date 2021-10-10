@@ -69,11 +69,13 @@ interface CollectionInterface extends \IteratorAggregate
     public function toArray(): array;
 
     /**
-     * Returns the firt item in the collection
+     * Returns the firt item in the collection matching user specify callback if any
      * 
+     * @param callable|\Closure|null $callback 
+     * @param mixed|null $default 
      * @return mixed 
      */
-    public function first();
+    public function first($callback = null, $default = null);
 
     /**
      * Returns the last item in the collection
@@ -85,19 +87,21 @@ interface CollectionInterface extends \IteratorAggregate
     /**
      * Combine the user provided keys with the current collection values
      * 
-     * @param array $keys 
+     * @param array|\ArrayAccess|mixed $keys 
      * @return self 
      */
-    public function combine(array $keys);
+    public function combine($keys);
 
     /**
      * Returns all the elements of the collection in their raw state
+     * 
      * @return array 
      */
     public function all();
 
     /**
      * Returns the number of elements in the collection
+     * 
      * @return int 
      */
     public function count();
