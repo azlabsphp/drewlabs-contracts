@@ -15,6 +15,14 @@ namespace Drewlabs\Contracts\Notification;
 
 interface INotification
 {
+
+    /**
+     * Unique identifier of the notification instance
+     * 
+     * @return int|string 
+     */
+    public function id();
+
     /**
      * Return the string identifier of the notification sender.
      *
