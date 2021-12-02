@@ -20,33 +20,33 @@ interface Notifiable
      *
      * @return INotificationReceiver[]
      */
-    public function getNotificationReceivers();
+    public function getReceivers();
 
     /**
      * Returns the identifier of the notification being sent.
      *
      * @return INotificationSender
      */
-    public function getNotificationSender();
+    public function getSender();
 
     /**
      * Return the notification server configuration object.
      *
      * @return INotificationServer
      */
-    public function notificationServerConfigs();
+    public function serverConfigs();
 
     /**
      * Add a new receiver to the list of receivers.
      *
      * @return static
      */
-    public function pushNotificationReceiver(INotificationReceiver $receiver);
+    public function pushReceiver(INotificationReceiver $receiver);
 
     /**
      * Set the details of the notification sender.
      *
      * @return static
      */
-    public function setNotificationSender(INotificationSender $sender);
+    public function setSender(INotificationSender $sender);
 }

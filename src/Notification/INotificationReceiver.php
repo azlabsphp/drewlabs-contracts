@@ -34,7 +34,7 @@ interface INotificationReceiver
      *
      * @return string|mixed
      */
-    public function getNotificationContent();
+    public function getContent();
 
     /**
      * Return the notification subject.

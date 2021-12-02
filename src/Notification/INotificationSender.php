@@ -27,5 +27,5 @@ interface INotificationSender
      *
      * @return string
      */
-    public function getUniqueIdentifier();
+    public function getIdentifier();
 }

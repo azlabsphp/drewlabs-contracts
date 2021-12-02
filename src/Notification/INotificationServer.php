@@ -20,7 +20,7 @@ interface INotificationServer
      *
      * @return string
      */
-    public function getClientUniqueIdentifier();
+    public function getClientIdentifier();
 
     /**
      * Returns client secret string.
