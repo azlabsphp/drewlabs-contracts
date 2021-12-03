@@ -30,13 +30,6 @@ interface Notifiable
     public function getSender();
 
     /**
-     * Return the notification server configuration object.
-     *
-     * @return INotificationServer
-     */
-    public function serverConfigs();
-
-    /**
      * Add a new receiver to the list of receivers.
      *
      * @return static
