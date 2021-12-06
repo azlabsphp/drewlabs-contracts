@@ -24,16 +24,16 @@ interface INotification
     public function id();
 
     /**
-     * Return the string identifier of the notification sender.
+     * Returns details of the sender object.
      *
-     * @return string
+     * @return string|Addressable
      */
     public function getSender();
 
     /**
      * Returns the notification identifier of the notification receiver.
      *
-     * @return string|mixed
+     * @return string|Addressable
      */
     public function getReceiver();
 
