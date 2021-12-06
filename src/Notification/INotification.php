@@ -24,9 +24,9 @@ interface INotification
     public function id();
 
     /**
-     * Return the string identifier of the notification sender.
+     * Returns details of the sender object.
      *
-     * @return string
+     * @return string|Addressable
      */
     public function getSender();
 
