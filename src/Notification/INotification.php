@@ -33,7 +33,7 @@ interface INotification
     /**
      * Returns the notification identifier of the notification receiver.
      *
-     * @return string|mixed
+     * @return string|Addressable
      */
     public function getReceiver();
 
