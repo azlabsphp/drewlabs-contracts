@@ -16,23 +16,23 @@ namespace Drewlabs\Contracts\Notification;
 interface Addressable
 {
     /**
-     * Returns the identifier attached to the address object
-     * 
-     * @return string 
+     * Compute the string value of the address.
+     *
+     * @return string
+     */
+    public function __toString();
+
+    /**
+     * Returns the identifier attached to the address object.
+     *
+     * @return string
      */
     public function id();
 
     /**
-     * Returns the name attached to the address object
-     * 
-     * @return string|null 
+     * Returns the name attached to the address object.
+     *
+     * @return string|null
      */
     public function name();
-
-    /**
-     * Compute the string value of the address
-     * 
-     * @return string 
-     */
-    public function __toString();
 }

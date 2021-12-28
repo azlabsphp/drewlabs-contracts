@@ -16,10 +16,8 @@ namespace Drewlabs\Contracts\Http;
 interface ViewResponseHandler
 {
     /**
-     * Returns a http response a view
-     * 
-     * @param string $path 
-     * @param array $data 
+     * Returns a http response a view.
+     *
      * @return mixed|string
      */
     public function view(string $path, array $data = []);

@@ -11,13 +11,16 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Drewlabs\Contracts\Data\DataRepository\Services;
+namespace Drewlabs\Contracts\Observable;
 
-use Drewlabs\Contracts\Data\Parser\ModelAttributeParser;
-
-/**
- * @deprecated v1.0
- */
-interface IModelAttributesParser extends ModelAttributeParser
+interface Producer extends \SplSubject
 {
+    /**
+     * Produce new value.
+     *
+     * @param mixed|null $data
+     *
+     * @return void
+     */
+    public function next($data = null);
 }

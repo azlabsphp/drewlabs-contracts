@@ -13,26 +13,10 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts;
 
-/**
- * Container is a key => value pair data structure implementation alowing to save
- * and retrieve values. It looks like a dictionnary.
- */
-interface Container
+use Psr\Container\ContainerInterface;
+
+interface Container extends ContainerInterface
 {
-    /**
-     * Get an item from the container based on item $key.
-     *
-     * @return mixed
-     */
-    public function get($key);
-
-    /**
-     * Check if container has a given value.
-     *
-     * @param string $key
-     */
-    public function has($key): bool;
-
     /**
      * Get all container values.
      *
@@ -43,10 +27,9 @@ interface Container
     /**
      * Set a value to a container key.
      *
-     * @param string $key
-     * @param mixed  $value
+     * @param string|callable|object $value
      *
-     * @return void
+     * @return self
      */
-    public function set($key, $value);
+    public function set(string $key, $value);
 }

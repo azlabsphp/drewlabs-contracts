@@ -13,6 +13,9 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Observable;
 
+/**
+ * @deprecated 2.0.0 use {\Drewlabs\Contracts\Observable\Producer} instead
+ */
 interface IEvent extends \SplSubject
 {
     /**

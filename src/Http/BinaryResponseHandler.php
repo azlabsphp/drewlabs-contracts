@@ -16,29 +16,32 @@ namespace Drewlabs\Contracts\Http;
 interface BinaryResponseHandler
 {
     /**
-     * Returns a binary response download
+     * Returns a binary response download.
      *
      * @param string $path
      * @param string $name
-     * @param array $headers
+     * @param array  $headers
+     *
      * @return mixed
      */
     public function download($path, $name = null, $headers = [], $deleteAfterSend = false);
 
     /**
-     * Return a stream output
+     * Return a stream output.
      *
      * @param string $filename
-     * @param \Closure $callback
+     *
      * @return mixed
      */
     public function stream($filename, \Closure $callback);
+
     /**
-     * Returns a binary output
+     * Returns a binary output.
      *
      * @param string $path
-     * @param array $headers
+     * @param array  $headers
+     *
      * @return mixed
      */
-    public function file($path, $headers = array());
+    public function file($path, $headers = []);
 }

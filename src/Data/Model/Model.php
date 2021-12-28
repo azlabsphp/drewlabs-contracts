@@ -15,7 +15,6 @@ namespace Drewlabs\Contracts\Data\Model;
 
 use Drewlabs\Contracts\Support\ArrayableInterface;
 
-/** @package Drewlabs\Contracts\Data\Model */
 interface Model extends ArrayableInterface
 {
     /**

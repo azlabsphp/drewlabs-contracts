@@ -20,9 +20,9 @@ interface UnAuthorizedResponseHandler
     /**
      * Convert an authorization exception into a response.
      *
-     * @param  Request  $request
-     * @param  \Exception|null  $exception
+     * @param Request $request
+     *
      * @return Response|mixed
      */
-    public function unauthorized($request, \Exception $exception = null);
+    public function unauthorized($request, ?\Exception $exception = null);
 }

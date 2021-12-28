@@ -8,9 +8,11 @@
             "email": "azandrewdevelopper@gmail.com"
         }
     ],
+    "minimum-stability": "stable",
     "require": {
-        "php": ">=7.3",
-        "psr/http-message": "^1.0"
+        "php": ">=7.4",
+        "psr/http-message": "^1.0",
+        "psr/container": "^2.0"
     },
     "autoload": {
         "psr-4": {

@@ -13,9 +13,6 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Notification;
 
-/**
- * @package Drewlabs\Contracts\Notification
- */
 interface ITextMessageNotifier extends INotifier
 {
 }

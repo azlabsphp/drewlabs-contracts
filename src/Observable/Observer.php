@@ -11,8 +11,16 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Drewlabs\Contracts\Validator;
+namespace Drewlabs\Contracts\Observable;
 
-interface ArrayableValidator extends CoreValidator
+interface Observer extends \SplObserver
 {
+    /**
+     * Listen for values.
+     *
+     * @param mixed|null $data
+     *
+     * @return mixed
+     */
+    public function listen($data = null);
 }
