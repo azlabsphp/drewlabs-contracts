@@ -13,9 +13,6 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts;
 
-/**
- * Interface d'envoi de notifications.
- */
 interface Notifiable
 {
     /**
