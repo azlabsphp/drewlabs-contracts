@@ -13,8 +13,6 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Data\DML;
 
-use Drewlabs\Contracts\Data\Model\Model;
-
 interface DMLProvider
 {
     /**
@@ -43,11 +41,11 @@ interface DMLProvider
      *
      * $dto_transform_fn if passed in with try to apply data transformation to the return result.
      *
-     * Note: $dto_transform_fn must be a \Closure or PHP Callable that takes {DataProviderQueryResultInterface} as parameter
+     * Note: $dto_transform_fn must be a \Closure or PHP Callable that takes {EnumerableQueryResult} as parameter
      *
      * <code>
      * <?php
-     *      $instance->select($query, $columns, false, function(\Drewlabs\Contracts\Data\DataProviderQueryResultInterface $result ) {
+     *      $instance->select($query, $columns, false, function(\Drewlabs\Contracts\Data\EnumerableQueryResult $result ) {
      *          // Code to perform transformation
      *          return $transformed_values;
      *      })
