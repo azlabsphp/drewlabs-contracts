@@ -27,7 +27,7 @@ interface EnumerableQueryResult extends \ArrayAccess
      * 
      * @return mixed 
      */
-    public function getItems();
+    public function items();
 
     /**
      * Set result items
