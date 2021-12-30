@@ -13,19 +13,10 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Data;
 
+/**
+ * @deprecated v2.0.x
+ * @package Drewlabs\Contracts\Data
+ */
 interface WithHiddenAttributesModelInterface
 {
-    /**
-     * Returns the list of guarded attribute of an object or ORM Model.
-     *
-     * @return array
-     */
-    public function getHidden();
-
-    /**
-     * Set the attached model hidden property.
-     *
-     * @return static
-     */
-    public function setHidden(array $attributes);
 }
