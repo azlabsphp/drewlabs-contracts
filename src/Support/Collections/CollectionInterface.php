@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Support\Collections;
 
-interface CollectionInterface extends \IteratorAggregate
+interface CollectionInterface extends \IteratorAggregate, Enumerable
 {
     /**
      * Add an item to the collection based on key or value.
