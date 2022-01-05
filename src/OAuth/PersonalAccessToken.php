@@ -17,7 +17,7 @@ interface PersonalAccessToken extends Token
 {
     /**
      * 
-     * @return mixed 
+     * @return Token 
      */
     public function token();
 

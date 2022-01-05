@@ -17,13 +17,23 @@ namespace Drewlabs\Contracts\Validator;
  * @method self validate(array $values, array $rules, ?array $messages = [], ?\Closure $callback = null)
  * @method self validate(string $validatable, array $values, ?\Closure $callback = null)
  * @method self validate(\Drewlabs\Contracts\Validator\CoreValidatable $validatable, array $values, ?\Closure $callback = null)
+ * @method self validate(\Drewlabs\Contracts\Validator\CoreValidatable $validatable, ?\Closure $callback = null)
  */
 interface Validator extends CoreValidator
 {
     /**
      * Set model rules loader control value.
+     * 
+     * @deprecated v2.0.5x use {static::updating()} method
      *
      * @return static
      */
     public function setUpdate(bool $value);
+
+    /**
+     * Tells the validator to load rules defines on updateRules() method
+     *
+     * @return static
+     */
+    public function updating();
 }
