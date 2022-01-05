@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\OAuth;
 
-interface PersonalAccessToken
+interface PersonalAccessToken extends Token
 {
     /**
      * 
