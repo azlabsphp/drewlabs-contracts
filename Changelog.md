@@ -12,3 +12,7 @@
 - Added [OAuth\Token] interface
 - Added [OAuth\RefreshToken] interface
 - Deprecated [Validator::setUpdate] method
+
+## v2022010520070
+
+- Replaced [OAuth\ValidatorWithNextCallbackInterface] with [Validator\ExceptionalValidator]

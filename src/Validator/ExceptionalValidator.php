@@ -13,14 +13,14 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Validator;
 
-interface ValidatorWithNextCallbackInterface extends CoreValidator
+interface ExceptionalValidator extends CoreValidator
 {
     /**
      * Add an after validation callback.
      *
      * @param callable|\Closure $callback
      *
-     * @return self
+     * @return static|CoreValidator|Validator
      */
     public function after($callback);
 }
