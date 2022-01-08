@@ -16,3 +16,10 @@
 ## v2022010520070
 
 - Replaced [OAuth\ValidatorWithNextCallbackInterface] with [Validator\ExceptionalValidator]
+
+## v2022010820080
+
+- Removed deprecated [Notification\ISmsNotifier]
+- Removed deprecated [Notification\INotificationJobProvider]
+- Removed deprecated [Auth\IUserAccountModel]
+- Added [Notification\AttachmentsNotification]
