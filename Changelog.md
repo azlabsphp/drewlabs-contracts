@@ -23,3 +23,7 @@
 - Removed deprecated [Notification\INotificationJobProvider]
 - Removed deprecated [Auth\IUserAccountModel]
 - Added [Notification\AttachmentsNotification]
+
+## v2022010820082
+
+- Added HasAbilities and HasApiTokens interfaces
