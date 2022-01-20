@@ -13,23 +13,8 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\OAuth;
 
-interface Token
+interface Token extends HasAbilities
 {
-    /**
-     * Determine if the token has a given scope.
-     *
-     * @param  string  $scope
-     * @return bool
-     */
-    public function can($scope);
-
-    /**
-     * Determine if the token is missing a given scope.
-     *
-     * @param  string  $scope
-     * @return bool
-     */
-    public function cant($scope);
 
     /**
      * Revoke the token instance.
