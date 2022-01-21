@@ -27,3 +27,7 @@
 ## v2022010820082
 
 - Added HasAbilities and HasApiTokens interfaces
+
+## v2022010820083
+
+- Added AccessTokenBridge interface
