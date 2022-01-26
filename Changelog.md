@@ -38,3 +38,10 @@
 - Deprecated [\Drewlabs\Contracts\Auth\IDrewlabsAuthorizable]
 - Deprecated [\Drewlabs\Contracts\Auth\IVerifiable]
 - Change getLabel and getID method in [\Drewlabs\Contracts\Auth\AuthorizationInterface] by [label()] and [id()] methods
+
+
+## v202201262210
+
+- Removed [\Drewlabs\Contracts\Auth\IDrewlabsNotifiable]
+- Removed [\Drewlabs\Contracts\Auth\IDrewlabsAuthorizable]
+- Removed [\Drewlabs\Contracts\Auth\IVerifiable]
