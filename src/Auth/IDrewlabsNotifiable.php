@@ -13,14 +13,10 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Auth;
 
-interface IDrewlabsNotifiable
+/**
+ * @deprecated v2.1.x
+ * @package Drewlabs\Contracts\Auth
+ */
+interface IDrewlabsNotifiable extends Notifiable
 {
-    /**
-     * Fetch list of channels associated with this instance that can be use for notifications.
-     *
-     * @return array
-     */
-    public function getChannels();
-
-    // Define other notification methods here
 }

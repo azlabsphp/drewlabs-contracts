@@ -13,19 +13,14 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Auth;
 
-interface AuthorizationInterface
+interface Notifiable
 {
     /**
-     * Return the unique identifier string of the authorization.
+     * Fetch list of channels associated with this instance that can be use for notifications.
      *
-     * @return string
+     * @return array
      */
-    public function label();
+    public function getChannels();
 
-    /**
-     * Return the UUID of the authorization.
-     *
-     * @return string
-     */
-    public function id();
+    // Define other notification methods here
 }

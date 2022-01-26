@@ -67,15 +67,6 @@ interface Authenticatable
     public function getAuthUserName();
 
     /**
-     * Create a new personal access token for the user.
-     *
-     * @param string $name
-     *
-     * @return \Laravel\Passport\PersonalAccessTokenResult
-     */
-    public function createToken($name, array $scopes = []);
-
-    /**
      * Return the authenticatable user details.
      *
      * @return mixed

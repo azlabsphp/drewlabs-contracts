@@ -1,5 +1,4 @@
 <?php
-
 declare(strict_types=1);
 
 /*
@@ -13,19 +12,12 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Auth;
 
-interface AuthorizationInterface
+interface Verifiable
 {
     /**
-     * Return the unique identifier string of the authorization.
+     * Returns a boolean value indicationg whether the user is verified / Not.
      *
-     * @return string
+     * @return bool
      */
-    public function label();
-
-    /**
-     * Return the UUID of the authorization.
-     *
-     * @return string
-     */
-    public function id();
+    public function isVerified();
 }

@@ -13,28 +13,13 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Auth;
 
-interface IDrewlabsAuthorizable
+/** 
+ * @deprecated v2.1.x Interface is deprecated in favor of HasAbilities
+ * 
+ * @package Drewlabs\Contracts\Auth
+ * */
+interface IDrewlabsAuthorizable extends HasAbilities
 {
-    /**
-     * Determine if the entity has a given ability.
-     *
-     * @param string      $ability
-     * @param array|mixed $arguments
-     *
-     * @return bool
-     */
-    public function can($ability, $arguments = []);
-
-    /**
-     * Determine if the entity does not have a given ability.
-     *
-     * @param string      $ability
-     * @param array|mixed $arguments
-     *
-     * @return bool
-     */
-    public function cant($ability, $arguments = []);
-
     /**
      * Determine if the entity does not have a given ability.
      *

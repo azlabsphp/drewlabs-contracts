@@ -13,12 +13,10 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Auth;
 
-interface IVerifiable
+/**
+ * @deprecated 2.1.x [Use Verifiable interface instead]
+ * @package Drewlabs\Contracts\Auth
+ */
+interface IVerifiable extends Verifiable
 {
-    /**
-     * Returns a boolean value indicationg whether the user is verified / Not.
-     *
-     * @return bool
-     */
-    public function isVerified();
 }

@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Auth;
 
-interface AuthorizableInterface extends IDrewlabsAuthorizable
+interface AuthorizableInterface extends HasAbilities
 {
     /**
      * Return the list of authorizations of the instance.
