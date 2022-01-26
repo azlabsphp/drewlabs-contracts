@@ -31,3 +31,10 @@
 ## v2022010820083
 
 - Added AccessTokenBridge interface
+
+## v202201262110
+
+- Deprecated [\Drewlabs\Contracts\Auth\IDrewlabsNotifiable]
+- Deprecated [\Drewlabs\Contracts\Auth\IDrewlabsAuthorizable]
+- Deprecated [\Drewlabs\Contracts\Auth\IVerifiable]
+- Change getLabel and getID method in [\Drewlabs\Contracts\Auth\AuthorizationInterface] by [label()] and [id()] methods
