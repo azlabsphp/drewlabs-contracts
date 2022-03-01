@@ -50,3 +50,4 @@
 ## v202201262211
 
 - Added [\Drewlabs\Contracts\Auth\UserManager] and [\Drewlabs\Contracts\Auth\AuthManager] interfaces
+- Modify TokenManager interface declarations
