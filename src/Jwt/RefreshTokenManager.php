@@ -17,6 +17,11 @@ use Drewlabs\Contracts\Auth\Authenticatable;
 use Drewlabs\Core\Jwt\Exceptions\RefreshTokenExpiredException;
 use Drewlabs\Core\Jwt\Exceptions\RefreshTokenNotFound;
 
+/**
+ * @deprecated v2.x Will be remove in v3.x
+ * 
+ * @package Drewlabs\Contracts\Jwt
+ */
 interface RefreshTokenManager
 {
     /**

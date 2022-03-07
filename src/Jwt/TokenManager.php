@@ -16,7 +16,7 @@ namespace Drewlabs\Contracts\Jwt;
 interface TokenManager
 {
     /**
-     * Decode a string and return a payload if successful or throws an exception.
+     * Decode user provided access token string returning composed claims
      *
      * @param string $token
      *
@@ -25,47 +25,33 @@ interface TokenManager
     public function decodeToken($token);
 
     /**
-     * Generate a Base64 encoded string containning connected user information, the issuser and validation data.
+     * Generates a personal access token from provided claims
      *
      * @param array|object $claims
      *
-     * @throws \RuntimeException;
+     * @throws \Exception;
      *
-     * @return static
+     * @return mixed
      */
     public function encodeToken($claims);
 
     /**
-     * Revalidate a Base64 encoded string containning connected user information, the issuser and validation data.
+     * Regenerate user provided token with new expiration date and claims
      *
      * @param string $token
      *
-     * @throws \RuntimeException;
+     * @throws \Exception;
      *
      * @return static
      */
     public function refreshToken($token);
 
     /**
-     * Add a token to the blacklist.
+     * Revoke the user provided token
      *
      * @param string $token
      *
      * @return bool
      */
     public function invalidateToken($token);
-
-    /**
-     * Payload factory getter.
-     *
-     * @return IPayloadFactory
-     */
-    public function payloadFactory();
-
-    /**
-     * Return the generated token string.
-     *
-     * @return string
-     */
-    public function getToken();
 }

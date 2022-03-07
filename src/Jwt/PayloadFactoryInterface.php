@@ -13,9 +13,9 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Jwt;
 
-use Drewlabs\Contracts\Factory\IFactory;
+use Drewlabs\Contracts\Support\ArrayableInterface;
 
-interface PayloadFactoryInterface extends IFactory
+interface PayloadFactoryInterface
 {
     /**
      * Returns payload claims instance.
@@ -34,7 +34,16 @@ interface PayloadFactoryInterface extends IFactory
     /**
      * Set the refresh flow.
      *
-     * @return $this
+     * @return self
      */
     public function setRefreshFlow(bool $refresh_flow = true);
+
+    /**
+     * Generate a payload with default claims and user provided custom claims.
+     *
+     * @param array $claims
+     *
+     * @return array|object|ArrayableInterface
+     */
+    public function make(array $claims = []);
 }

@@ -54,3 +54,4 @@
 ## v202203072212
 
 - Added [\Drewlabs\Contracts\Auth\NotificationChannelsAware] interface
+- Modify TokenManager interface declarations
