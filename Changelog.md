@@ -55,3 +55,4 @@
 
 - Added [\Drewlabs\Contracts\Auth\NotificationChannelsAware] interface
 - Modify TokenManager interface declarations
+- Add parameters to addChannel method indicating whether the channel is the default channel or not
