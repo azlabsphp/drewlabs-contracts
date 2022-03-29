@@ -64,3 +64,5 @@
 - Deprecate `GuardedModel::getGuardedAttributes()` method in favor of `GuardedModel::getGuarded()` method
 - Deprecate `Parseable::getFillables()` method in favor of `Parseable::getFillable()` method
 - Add `Parseable::fillable()` method
+- Deprecated `DataProvidedInterface::class`, `ModelFiltersInterface::class`, `MultiValidationRulesHandlerInterface::class`, `ParseableModelRepository::class`
+- Removed replaced `DataProviderQueryResultInterface::class`, `WithHiddenAttributesModelInterface::class`
