@@ -15,6 +15,10 @@ namespace Drewlabs\Contracts\Data;
 
 use Drewlabs\Contracts\Data\Repository\ParseableRepository;
 
+/**
+ * @deprecated 2.4.x Use {@see ParseableRepository} interface
+ * @package Drewlabs\Contracts\Data
+ */
 interface ParseableModelRepository extends ParseableRepository
 {
 }

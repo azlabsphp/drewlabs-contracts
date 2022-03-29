@@ -15,6 +15,15 @@ namespace Drewlabs\Contracts\Data;
 
 use Drewlabs\Contracts\Data\Model\Model;
 
+/**
+ * @deprecated v2.4.x Previously maintains for compatibility reasons
+ *             with old projects implementations
+ *             Will be remove in next major release. Prefer use of @see ActionHandler}
+ *             which provide a uniform comand interface via {ActionHandler::handle()}
+ *             method
+ * 
+ * @package Drewlabs\Contracts\Data
+ */
 interface DataProviderInterface
 {
     /**

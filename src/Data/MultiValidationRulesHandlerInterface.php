@@ -13,6 +13,11 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Data;
 
+/**
+ * @deprecated 2.4.x Unused interface
+ * 
+ * @package Drewlabs\Contracts\Data
+ */
 interface MultiValidationRulesHandlerInterface
 {
     /**
