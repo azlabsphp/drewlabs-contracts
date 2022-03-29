@@ -13,12 +13,13 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Data\Model;
 
-interface Relatable
+/**
+ * @deprecated v2.2.x Methods are ported to {@see HasRelations} interface
+ *             The new interface add some additional methods that must be
+ *             implemented 
+ * 
+ * @package Drewlabs\Contracts\Data\Model
+ */
+interface Relatable extends HasRelations
 {
-    /**
-     * Get the list of configured model relations.
-     *
-     * @return string[]
-     */
-    public function getModelRelationLoadersNames();
 }

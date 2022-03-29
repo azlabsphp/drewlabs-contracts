@@ -56,3 +56,11 @@
 - Added [\Drewlabs\Contracts\Auth\NotificationChannelsAware] interface
 - Modify TokenManager interface declarations
 - Add parameters to addChannel method indicating whether the channel is the default channel or not
+
+## [2.4.0] 2022-03-29
+
+- Deprecated Relatable interface
+- Added HasRelations and HidesAttributes interface
+- Deprecate `GuardedModel::getGuardedAttributes()` method in favor of `GuardedModel::getGuarded()` method
+- Deprecate `Parseable::getFillables()` method in favor of `Parseable::getFillable()` method
+- Add `Parseable::fillable()` method
