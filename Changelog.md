@@ -68,3 +68,4 @@
 ## [2.5.0] 2022-04-12
 
 - Deprecated getModelRelationLoadersNames method definition in HasRelations interface
+- Added VieeModel Interface
