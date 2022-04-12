@@ -13,6 +13,11 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Data\Model;
 
+/**
+ * @deprecated v2.2.x Prefer usage of data persistence layer over active record
+ *             implementation. Model should just represent a state, that should
+ *             persist using a persitence layer
+ */
 interface ActiveModel extends Model
 {
     /**

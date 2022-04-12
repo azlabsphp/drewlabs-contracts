@@ -39,13 +39,11 @@
 - Deprecated [\Drewlabs\Contracts\Auth\IVerifiable]
 - Change getLabel and getID method in [\Drewlabs\Contracts\Auth\AuthorizationInterface] by [label()] and [id()] methods
 
-
 ## v202201262210
 
 - Removed [\Drewlabs\Contracts\Auth\IDrewlabsNotifiable]
 - Removed [\Drewlabs\Contracts\Auth\IDrewlabsAuthorizable]
 - Removed [\Drewlabs\Contracts\Auth\IVerifiable]
-
 
 ## v202201262211
 
@@ -56,3 +54,17 @@
 - Added [\Drewlabs\Contracts\Auth\NotificationChannelsAware] interface
 - Modify TokenManager interface declarations
 - Add parameters to addChannel method indicating whether the channel is the default channel or not
+
+## [2.4.0] 2022-03-29
+
+- Deprecated Relatable interface
+- Added HasRelations and HidesAttributes interface
+- Deprecate `GuardedModel::getGuardedAttributes()` method in favor of `GuardedModel::getGuarded()` method
+- Deprecate `Parseable::getFillables()` method in favor of `Parseable::getFillable()` method
+- Add `Parseable::fillable()` method
+- Deprecated `DataProvidedInterface::class`, `ModelFiltersInterface::class`, `MultiValidationRulesHandlerInterface::class`, `ParseableModelRepository::class`
+- Removed replaced `DataProviderQueryResultInterface::class`, `WithHiddenAttributesModelInterface::class`
+
+## [2.5.0] 2022-04-12
+
+- Deprecated getModelRelationLoadersNames method definition in HasRelations interface

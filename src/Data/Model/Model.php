@@ -25,11 +25,20 @@ interface Model extends ArrayableInterface
     public function getPrimaryKey();
 
     /**
-     * Returns the value of the primary of the model.
+     * Get the value of the primary key of the model.
      *
-     * @return string
+     * @return int|string|mixed
      */
     public function getKey();
+
+    /**
+     * Set the primary key of the model.
+     *
+     * @param int|string|mixed $value
+     *
+     * @return self
+     */
+    public function setKey($value);
 
     /**
      * Returns the collection associated with the given model.
@@ -46,24 +55,10 @@ interface Model extends ArrayableInterface
     public function attributesToArray();
 
     /**
-     * As the {attributesToArray} method, it returns the model public properties to an associative array.
+     * As the {attributesToArray} method, it returns the model
+     * properties as an associative array.
      *
      * @return array
      */
     public function getAttributes();
-
-
-    /**
-     * Returns the list of guarded attribute of an object or ORM Model.
-     *
-     * @return array
-     */
-    public function getHidden();
-
-    /**
-     * Set the attached model hidden property.
-     *
-     * @return static
-     */
-    public function setHidden(array $attributes);
 }

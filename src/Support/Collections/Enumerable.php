@@ -15,7 +15,6 @@ namespace Drewlabs\Contracts\Support\Collections;
 
 interface Enumerable
 {
-
     /**
      * Apply the transformation callback over each item element.
      *

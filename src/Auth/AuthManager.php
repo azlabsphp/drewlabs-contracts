@@ -13,43 +13,40 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Auth;
 
-use Exception;
-
 interface AuthManager
 {
     /**
-     * Try authenticating user using authentication credentials
+     * Try authenticating user using authentication credentials.
      *
-     * @param array $credentials
-     * @param bool $remember
+     * @throws \Exception
      *
-     * @throws Exception
      * @return bool
      */
     public function authenticate(array $credentials, bool $remember);
 
     /**
-     * Log user out of the application
+     * Log user out of the application.
      *
      * @return void
      */
     public function logout($user);
 
     /**
-     * Try authenticating user via it identifier and a remember token
+     * Try authenticating user via it identifier and a remember token.
      *
-     * @param mixed $id
+     * @param mixed  $id
      * @param string $token
-     * @throws Exception
+     *
+     * @throws \Exception
+     *
      * @return bool
      */
     public function authenticateViaToken($id, $token);
 
     /**
-     * Returns the authenticated user
+     * Returns the authenticated user.
      *
      * @return Authenticatable
      */
     public function user();
-
 }

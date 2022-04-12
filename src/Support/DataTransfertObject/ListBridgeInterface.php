@@ -28,7 +28,7 @@ interface ListBridgeInterface
      * Build a list of ObjectInterface from a list of ArrayableInterface params.
      *
      * @param ArrayableInterface[]||\stdClass[]|array[] $values
-     * @param bool                                      $all
+     * @param bool $all
      *
      * @return ObjectInterface[]
      */

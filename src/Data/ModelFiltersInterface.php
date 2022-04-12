@@ -15,6 +15,9 @@ namespace Drewlabs\Contracts\Data;
 
 use Drewlabs\Contracts\Data\Filters\FiltersInterface;
 
+/**
+ * @deprecated v2.4.x Prefer use of base interface {@see FiltersInterface}
+ */
 interface ModelFiltersInterface extends FiltersInterface
 {
 }

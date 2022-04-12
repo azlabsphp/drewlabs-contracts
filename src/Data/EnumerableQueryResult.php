@@ -16,21 +16,21 @@ namespace Drewlabs\Contracts\Data;
 interface EnumerableQueryResult extends \ArrayAccess
 {
     /**
-     * Returns collection items
+     * Returns collection items.
      *
      * @return mixed
      */
     public function getCollection();
 
     /**
-     * Same as getCollection() but for framework compatibility
-     * 
-     * @return mixed 
+     * Same as getCollection() but for framework compatibility.
+     *
+     * @return mixed
      */
     public function items();
 
     /**
-     * Set result items
+     * Set result items.
      *
      * @param mixed $items
      *

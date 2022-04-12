@@ -19,8 +19,6 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 
 /**
  * @deprecated v2.x Will be remove in v3.x
- * 
- * @package Drewlabs\Contracts\Jwt
  */
 interface JwtAuthInterface
 {

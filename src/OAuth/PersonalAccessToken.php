@@ -16,15 +16,14 @@ namespace Drewlabs\Contracts\OAuth;
 interface PersonalAccessToken extends Token
 {
     /**
-     * 
-     * @return Token 
+     * @return Token
      */
     public function token();
 
     /**
-     * Return the actual access token to be used for authorization
-     * 
-     * @return string 
+     * Return the actual access token to be used for authorization.
+     *
+     * @return string
      */
     public function accessToken();
 }
