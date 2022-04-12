@@ -18,9 +18,9 @@ interface PersonalAccessTokenFactory
     /**
      * Create a new personal access token.
      *
-     * @param  mixed  $user
-     * @param  string $name
-     * @param  array  $scopes
+     * @param mixed  $user
+     * @param string $name
+     *
      * @return PersonalAccessToken
      */
     public function make($user, $name, array $scopes = []);

@@ -15,42 +15,41 @@ namespace Drewlabs\Contracts\Auth;
 
 interface IAuthenticatablePolicy
 {
-
     /**
      * Check if the current authenticated user has a certain authorization group.
-     * 
-     * @param AuthorizableInterface $user 
-     * @param string $group 
-     * @return bool 
+     *
+     * @param string $group
+     *
+     * @return bool
      */
     public function hasAuthorizationGroup(AuthorizableInterface $user, $group);
 
     /**
      * Checks if the current authenticated user has an authorization group
      * in a list of authorization group.
-     * 
-     * @param AuthorizableInterface $user 
-     * @param string[] $groups 
-     * @return bool 
+     *
+     * @param string[] $groups
+     *
+     * @return bool
      */
     public function hasAuthorizationGroupIn(AuthorizableInterface $user, array $groups);
 
     /**
      * Checks if the current authenticated user has all authorization groups
      * in a list of authorization groups provided.
-     * 
-     * @param AuthorizableInterface $user 
-     * @param string[] $groups 
-     * @return bool 
+     *
+     * @param string[] $groups
+     *
+     * @return bool
      */
     public function hasAllAuthorizationGroups(AuthorizableInterface $user, array $groups);
-    
+
     /**
      * Check if the current authenticated user has a certain authorization.
-     * 
-     * @param AuthorizableInterface $user 
-     * @param string $authorization 
-     * @return bool 
+     *
+     * @param string $authorization
+     *
+     * @return bool
      */
     public function hasAuthorization(AuthorizableInterface $user, $authorization);
 
@@ -58,7 +57,6 @@ interface IAuthenticatablePolicy
      * Checks if the current authenticated user has an authorization
      * in a list of authorizations provided.
      *
-     * @param AuthorizableInterface $user
      * @param string[] $authorizations
      *
      * @return bool
@@ -68,10 +66,10 @@ interface IAuthenticatablePolicy
     /**
      * Checks if the current authenticated user has all authorizations
      * in a list of authorizations provided.
-     * 
-     * @param AuthorizableInterface $user 
-     * @param string[] $authorizations 
-     * @return bool 
+     *
+     * @param string[] $authorizations
+     *
+     * @return bool
      */
     public function hasAllAuthorizations(AuthorizableInterface $user, array $authorizations);
 }

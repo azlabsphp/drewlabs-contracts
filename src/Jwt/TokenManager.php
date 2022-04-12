@@ -16,7 +16,7 @@ namespace Drewlabs\Contracts\Jwt;
 interface TokenManager
 {
     /**
-     * Decode user provided access token string returning composed claims
+     * Decode user provided access token string returning composed claims.
      *
      * @param string $token
      *
@@ -25,7 +25,7 @@ interface TokenManager
     public function decodeToken($token);
 
     /**
-     * Generates a personal access token from provided claims
+     * Generates a personal access token from provided claims.
      *
      * @param array|object $claims
      *
@@ -36,7 +36,7 @@ interface TokenManager
     public function encodeToken($claims);
 
     /**
-     * Regenerate user provided token with new expiration date and claims
+     * Regenerate user provided token with new expiration date and claims.
      *
      * @param string $token
      *
@@ -47,7 +47,7 @@ interface TokenManager
     public function refreshToken($token);
 
     /**
-     * Revoke the user provided token
+     * Revoke the user provided token.
      *
      * @param string $token
      *

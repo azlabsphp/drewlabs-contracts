@@ -69,8 +69,6 @@ interface DMLProvider
      * Update a row/model from the database.
      *
      * Returns the update model with it properties or the transformed value returned the $dto_transform_fn callback
-     *
-     * @param array ...$args
      */
     public function update(...$params);
 

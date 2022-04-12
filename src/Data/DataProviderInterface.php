@@ -21,8 +21,6 @@ use Drewlabs\Contracts\Data\Model\Model;
  *             Will be remove in next major release. Prefer use of @see ActionHandler}
  *             which provide a uniform comand interface via {ActionHandler::handle()}
  *             method
- * 
- * @package Drewlabs\Contracts\Data
  */
 interface DataProviderInterface
 {

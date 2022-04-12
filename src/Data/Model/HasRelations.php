@@ -16,11 +16,21 @@ namespace Drewlabs\Contracts\Data\Model;
 interface HasRelations
 {
     /**
-     * Get the list of configured model relations.
+     * Depreated contract to get the list of configured model relations.
+     *
+     * @deprecated v2.x.0 will be remove in next major release
+     * use {@see getDeclaredRelations()} instead
      *
      * @return string[]
      */
     public function getModelRelationLoadersNames();
+
+    /**
+     * Get the list of configured model relations.
+     *
+     * @return string[]
+     */
+    public function getDeclaredRelations();
 
     /**
      * Get all the loaded relations for the instance.
@@ -32,7 +42,8 @@ interface HasRelations
     /**
      * Get a specified relationship.
      *
-     * @param  string  $relation
+     * @param string $relation
+     *
      * @return mixed
      */
     public function getRelation($relation);
@@ -40,8 +51,9 @@ interface HasRelations
     /**
      * Set the given relationship on the model.
      *
-     * @param  string  $relation
-     * @param  mixed  $value
+     * @param string $relation
+     * @param mixed  $value
+     *
      * @return $this
      */
     public function setRelation($relation, $value);

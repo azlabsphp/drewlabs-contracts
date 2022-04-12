@@ -17,8 +17,10 @@ interface GuardedModel
 {
     /**
      * Returns the list of guarded attribute of an object or ORM Model.
-     * 
+     *
      * @deprecated v2.2.x call / use {self::getGuarded()} method instead
+     *
+     * Method is subject to be removed in version 3.x
      *
      * @return array
      */
@@ -34,15 +36,15 @@ interface GuardedModel
     /**
      * Set the guarded attributes for the model.
      *
-     * @param  array  $guarded
-     * @return $this
+     * @return self
      */
     public function guard(array $guarded);
 
     /**
      * Determine if the given key is guarded.
      *
-     * @param  string  $key
+     * @param string $key
+     *
      * @return bool
      */
     public function isGuarded($key);

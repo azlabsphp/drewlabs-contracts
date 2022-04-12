@@ -25,17 +25,18 @@ interface Model extends ArrayableInterface
     public function getPrimaryKey();
 
     /**
-     * Get the value of the primary key of the model
+     * Get the value of the primary key of the model.
      *
      * @return int|string|mixed
      */
     public function getKey();
 
     /**
-     * Set the primary key of the model
-     * 
-     * @param int|string|mixed $value 
-     * @return self 
+     * Set the primary key of the model.
+     *
+     * @param int|string|mixed $value
+     *
+     * @return self
      */
     public function setKey($value);
 
@@ -54,7 +55,7 @@ interface Model extends ArrayableInterface
     public function attributesToArray();
 
     /**
-     * As the {attributesToArray} method, it returns the model 
+     * As the {attributesToArray} method, it returns the model
      * properties as an associative array.
      *
      * @return array

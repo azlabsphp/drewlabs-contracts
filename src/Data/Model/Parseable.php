@@ -17,7 +17,7 @@ interface Parseable
 {
     /**
      * Returns the fillable properties of the given model.
-     * 
+     *
      * @deprecated v2.2.x uses {self::getFillable()} instead
      *
      * @return array
@@ -34,7 +34,6 @@ interface Parseable
     /**
      * Set the fillable attributes for the model.
      *
-     * @param  array  $fillable
      * @return $this
      */
     public function fillable(array $fillable);

@@ -16,14 +16,14 @@ namespace Drewlabs\Contracts\Data\Model;
 interface HidesAttributes
 {
     /**
-     * Get properties that should not be included during model serialization
+     * Get properties that should not be included during model serialization.
      *
      * @return array
      */
     public function getHidden();
 
     /**
-     * Defines properties that should not be included during model serialization
+     * Defines properties that should not be included during model serialization.
      *
      * @return static
      */

@@ -1,14 +1,23 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of the Drewlabs package.
+ *
+ * (c) Sidoine Azandrew <azandrewdevelopper@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Drewlabs\Contracts\OAuth;
 
 interface HasApiTokens
 {
-
     /**
      * Determine if the current API token has a given scope.
      *
-     * @param  string  $ability
      * @return bool
      */
     public function tokenCan(string $ability);
@@ -16,8 +25,6 @@ interface HasApiTokens
     /**
      * Create a new personal access token for the user.
      *
-     * @param  string  $name
-     * @param  array  $abilities
      * @return Token|PersonalAccessToken
      */
     public function createToken(string $name, array $abilities = ['*']);
@@ -32,7 +39,8 @@ interface HasApiTokens
     /**
      * Set the current access token for the user.
      *
-     * @param  HasAbilities  $accessToken
+     * @param HasAbilities $accessToken
+     *
      * @return self
      */
     public function withAccessToken($accessToken);

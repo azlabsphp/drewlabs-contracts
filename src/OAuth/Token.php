@@ -15,7 +15,6 @@ namespace Drewlabs\Contracts\OAuth;
 
 interface Token extends HasAbilities
 {
-
     /**
      * Revoke the token instance.
      *

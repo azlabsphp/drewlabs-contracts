@@ -16,9 +16,8 @@ namespace Drewlabs\Contracts\Data\Model;
 /**
  * @deprecated v2.2.x Methods are ported to {@see HasRelations} interface
  *             The new interface add some additional methods that must be
- *             implemented 
- * 
- * @package Drewlabs\Contracts\Data\Model
+ *             implemented
+ *             Interface is subject to be removed in version 3.x
  */
 interface Relatable extends HasRelations
 {

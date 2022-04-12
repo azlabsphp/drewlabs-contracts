@@ -41,8 +41,6 @@ interface PayloadFactoryInterface
     /**
      * Generate a payload with default claims and user provided custom claims.
      *
-     * @param array $claims
-     *
      * @return array|object|ArrayableInterface
      */
     public function make(array $claims = []);

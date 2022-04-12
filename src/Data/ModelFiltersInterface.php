@@ -17,8 +17,6 @@ use Drewlabs\Contracts\Data\Filters\FiltersInterface;
 
 /**
  * @deprecated v2.4.x Prefer use of base interface {@see FiltersInterface}
- * 
- * @package Drewlabs\Contracts\Data
  */
 interface ModelFiltersInterface extends FiltersInterface
 {
