@@ -23,7 +23,7 @@ interface Action
     public function type();
 
     /**
-     * @return ActionPayload
+     * @return ActionPayload|array|mixed
      */
     public function payload();
 }

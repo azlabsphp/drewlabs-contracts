@@ -13,6 +13,11 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Support\Immutable;
 
+/**
+ * @deprecated v2.5.x
+ * 
+ * @package Drewlabs\Contracts\Support\Immutable
+ */
 interface ValueObjectInterface extends \JsonSerializable, \ArrayAccess
 {
     /**
