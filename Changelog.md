@@ -69,3 +69,7 @@
 
 - Deprecated getModelRelationLoadersNames method definition in HasRelations interface
 - Added VieeModel Interface
+
+## [2.5.2] 2022-05-07
+
+- Added value() method to ActionPayload contract
