@@ -16,7 +16,7 @@ namespace Drewlabs\Contracts\Support;
 interface ArrayableInterface
 {
     /**
-     * Returns an array representation of the current instance
+     * Returns an array representation of the current instance.
      *
      * @return array
      */

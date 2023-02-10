@@ -26,5 +26,5 @@ interface CallProxyInterface
      *
      * @return mixed
      */
-    public function call($method, $args = [], ?\Closure $default = null);
+    public function call($method, $args = [], \Closure $default = null);
 }

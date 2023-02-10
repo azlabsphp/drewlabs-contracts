@@ -15,7 +15,6 @@ namespace Drewlabs\Contracts\Data\Model;
 
 interface GuardedModel
 {
-
     /**
      * Get the guarded attributes for the model.
      *

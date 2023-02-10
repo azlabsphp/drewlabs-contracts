@@ -23,5 +23,5 @@ interface ActionHandler
      *
      * @return ActionResult
      */
-    public function handle(Action $action, ?\Closure $callback = null);
+    public function handle(Action $action, \Closure $callback = null);
 }

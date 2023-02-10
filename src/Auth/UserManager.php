@@ -35,7 +35,7 @@ interface UserManager
      *
      * @return IUserModel|DoubleAuthUserInterface
      */
-    public function create(array $attributes, $params = [], ?\Closure $callback = null);
+    public function create(array $attributes, $params = [], \Closure $callback = null);
 
     /**
      *  Provide functionnality for updating a user using {id}.
@@ -44,7 +44,7 @@ interface UserManager
      *
      * @return IUserModel|DoubleAuthUserInterface
      */
-    public function update($id, array $attributes, array $params = [], ?\Closure $callback = null);
+    public function update($id, array $attributes, array $params = [], \Closure $callback = null);
 
     /**
      * Helper method for finding Application user by a remember token.

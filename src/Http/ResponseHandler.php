@@ -35,14 +35,14 @@ interface ResponseHandler
      *
      * @return Response|mixed
      */
-    public function ok($data, ?array $errors = null, $success = true);
+    public function ok($data, array $errors = null, $success = true);
 
     /**
      * Return a Server Error HTTP response  with status 500.
      *
      * @return Response|mixed
      */
-    public function error(\Exception $e, ?array $errors = null);
+    public function error(\Exception $e, array $errors = null);
 
     /**
      * Return an HTTP Bad Request response  with status >=400 or <=403.

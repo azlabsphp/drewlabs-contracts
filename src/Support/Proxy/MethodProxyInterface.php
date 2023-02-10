@@ -25,7 +25,7 @@ interface MethodProxyInterface
      *
      * @return mixed
      */
-    public function forwardCallTo($object, $method, $args = [], ?\Closure $default = null);
+    public function forwardCallTo($object, $method, $args = [], \Closure $default = null);
 
     /**
      * Provide a dynamic method proxy interface to the provided object.
@@ -38,5 +38,5 @@ interface MethodProxyInterface
      *
      * @return mixed
      */
-    public function proxy($object, $method, $args = [], ?\Closure $default = null);
+    public function proxy($object, $method, $args = [], \Closure $default = null);
 }

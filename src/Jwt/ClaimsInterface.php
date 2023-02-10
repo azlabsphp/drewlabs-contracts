@@ -46,5 +46,5 @@ interface ClaimsInterface
      *
      * @return array
      */
-    public function toPayload(?array $custom_claims = null);
+    public function toPayload(array $custom_claims = null);
 }

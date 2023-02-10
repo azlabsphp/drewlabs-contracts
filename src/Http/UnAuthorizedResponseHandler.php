@@ -24,5 +24,5 @@ interface UnAuthorizedResponseHandler
      *
      * @return Response|mixed
      */
-    public function unauthorized($request, ?\Exception $exception = null);
+    public function unauthorized($request, \Exception $exception = null);
 }

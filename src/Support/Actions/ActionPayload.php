@@ -18,8 +18,8 @@ use Drewlabs\Contracts\Support\ArrayableInterface;
 interface ActionPayload extends ArrayableInterface
 {
     /**
-     * Returns the value wrapped by the payload object
-     * 
+     * Returns the value wrapped by the payload object.
+     *
      * @return mixed
      */
     public function value();

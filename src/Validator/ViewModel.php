@@ -14,7 +14,6 @@ declare(strict_types=1);
 namespace Drewlabs\Contracts\Validator;
 
 use ArrayAccess;
-use Drewlabs\Contracts\Validator\CoreValidatable;
 
 interface ViewModel extends CoreValidatable, ArrayAccess
 {
@@ -32,7 +31,7 @@ interface ViewModel extends CoreValidatable, ArrayAccess
      *
      * @return array|mixed|null
      */
-    public function get(?string $key = null);
+    public function get(string $key = null);
 
     /**
      * Checks if the view model has a given key.
