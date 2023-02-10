@@ -16,16 +16,6 @@ namespace Drewlabs\Contracts\Data\Model;
 interface HasRelations
 {
     /**
-     * Depreated contract to get the list of configured model relations.
-     *
-     * @deprecated v2.x.0 will be remove in next major release
-     * use {@see getDeclaredRelations()} instead
-     *
-     * @return string[]
-     */
-    public function getModelRelationLoadersNames();
-
-    /**
      * Get the list of configured model relations.
      *
      * @return string[]

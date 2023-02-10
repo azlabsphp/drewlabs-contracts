@@ -16,7 +16,7 @@ namespace Drewlabs\Contracts\Support;
 interface ArrayableInterface
 {
     /**
-     * Serialize the implemented object into a PHP array.
+     * Returns an array representation of the current instance
      *
      * @return array
      */

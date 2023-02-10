@@ -34,14 +34,4 @@ interface BinaryResponseHandler
      * @return mixed
      */
     public function stream($filename, \Closure $callback);
-
-    /**
-     * Returns a binary output.
-     *
-     * @param string $path
-     * @param array  $headers
-     *
-     * @return mixed
-     */
-    public function file($path, $headers = []);
 }

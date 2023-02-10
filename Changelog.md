@@ -73,3 +73,13 @@
 ## [2.5.2] 2022-05-07
 
 - Added value() method to ActionPayload contract
+
+## [3.0.x] 2023-02-10
+
+- Removed deprecated classes and methods
+- Removed obselete interfaces
+- Renamed `\\Drewlabs\\Contracts\\Notification\\AttachmentsNotification` to `\\Drewlabs\\Contracts\\Notification\\ProvidesAttachements`
+- Renamed `\\Drewlabs\\Contracts\\Support\\ObjectMethodProxyInterface` to `\\Drewlabs\\Contracts\\MethodProxyInterface`
+- Renamed `\\Drewlabs\\Contracts\\Support\\DynamicMethodProxyInterface` to `\\Drewlabs\\Contracts\\CallMethodProxyInterface`
+- Removed `Drewlabs\Contracts\Http\BinaryResponseHandler::file` method as it's unused
+- Removed interfaces from the 2fa namespace as most are basically unused

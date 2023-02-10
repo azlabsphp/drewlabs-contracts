@@ -16,7 +16,7 @@ namespace Drewlabs\Contracts\Support;
 interface FuncArgument
 {
     /**
-     * Is argument optional or not.
+     * Check if argument is optional or not.
      */
     public function isOptional(): bool;
 

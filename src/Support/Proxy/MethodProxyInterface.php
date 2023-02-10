@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Support\Proxy;
 
-interface ObjectMethodProxyInterface
+interface MethodProxyInterface
 {
     /**
      * {@link proxy()} method provide the same method definition and can be used as

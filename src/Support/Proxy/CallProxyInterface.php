@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Support\Proxy;
 
-interface DynamicMethodProxyInterface
+interface CallProxyInterface
 {
     /**
      * Provide a dynamic method proxy interface to the current object.

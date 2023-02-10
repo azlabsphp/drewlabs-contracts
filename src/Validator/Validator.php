@@ -22,15 +22,6 @@ namespace Drewlabs\Contracts\Validator;
 interface Validator extends CoreValidator
 {
     /**
-     * Set model rules loader control value.
-     *
-     * @deprecated v2.0.5x use {static::updating()} method
-     *
-     * @return static
-     */
-    public function setUpdate(bool $value);
-
-    /**
      * Tells the validator to load rules defines on updateRules() method.
      *
      * @return static

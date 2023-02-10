@@ -15,7 +15,7 @@ namespace Drewlabs\Contracts\Notification;
 
 use Psr\Http\Message\StreamInterface;
 
-interface AttachmentsNotification
+interface ProvidesAttachments
 {
     /**
      * Returns a list of files attached to the notification.
