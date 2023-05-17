@@ -17,8 +17,11 @@ interface ViewResponseHandler
 {
     /**
      * Returns a http response a view.
-     *
-     * @return mixed|string
+     * 
+     * @param string $path 
+     * @param array $data
+     * 
+     * @return mixed|string 
      */
     public function view(string $path, array $data = []);
 }

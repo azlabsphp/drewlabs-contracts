@@ -77,5 +77,5 @@ interface DMLProvider
      *
      * @return int|mixed
      */
-    public function selectAggregate(array $query = [], string $aggregation = 'count');
+    public function aggregate(array $query = [], string $method = 'count');
 }

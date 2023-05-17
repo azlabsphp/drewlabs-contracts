@@ -13,14 +13,16 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Validator;
 
+use Drewlabs\Contracts\Validator\CoreValidator as Validator;
+
 interface ValidatorFactory
 {
     /**
-     * Create a fluent/any validator instance.
+     * Create a validator instance.
      *
      * @param array ...$args
      *
-     * @return CoreValidator|mixed
+     * @return Validator
      */
     public function make(...$args);
 }

@@ -13,16 +13,14 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Http;
 
-use Psr\Http\Message\ResponseInterface as Response;
-
 interface UnAuthorizedResponseHandler
 {
     /**
      * Convert an authorization exception into a response.
-     *
-     * @param Request $request
-     *
-     * @return Response|mixed
+     * 
+     * @param mixed $request 
+     * @param \Throwable|null $exception 
+     * @return mixed 
      */
-    public function unauthorized($request, \Exception $exception = null);
+    public function unauthorized($request, \Throwable $exception = null);
 }

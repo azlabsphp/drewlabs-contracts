@@ -13,6 +13,8 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Http;
 
+use Closure;
+
 interface BinaryResponseHandler
 {
     /**
@@ -24,14 +26,14 @@ interface BinaryResponseHandler
      *
      * @return mixed
      */
-    public function download($path, $name = null, $headers = [], $deleteAfterSend = false);
+    public function download(string $path, string $name = null, array $headers = [], $deleteAfterSend = false);
 
     /**
      * Return a stream output.
-     *
-     * @param string $filename
-     *
-     * @return mixed
+     * 
+     * @param string $name 
+     * @param Closure $callback 
+     * @return mixed 
      */
-    public function stream($filename, \Closure $callback);
+    public function stream(string $name, \Closure $callback);
 }

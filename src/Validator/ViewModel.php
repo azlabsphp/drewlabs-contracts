@@ -48,4 +48,11 @@ interface ViewModel extends CoreValidatable, ArrayAccess
      * @return array
      */
     public function all($keys = null);
+
+    /**
+     * Returns the array/dictionary representation of the current view model
+     * 
+     * @return array 
+     */
+    public function toArray();
 }
