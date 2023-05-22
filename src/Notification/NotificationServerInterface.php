@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Notification;
 
-interface INotificationServer
+interface NotificationServerInterface
 {
     /**
      * Returns the client unique credential for connecting to notification servers.

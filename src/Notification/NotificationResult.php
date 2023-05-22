@@ -13,9 +13,9 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Notification;
 
-use Drewlabs\Contracts\Support\ArrayableInterface;
+use Drewlabs\Contracts\Support\Arrayable;
 
-interface NotificationResult extends ArrayableInterface
+interface NotificationResult extends Arrayable
 {
     /**
      * @return string|\DateTimeInterface

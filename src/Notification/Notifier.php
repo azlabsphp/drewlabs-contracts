@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Notification;
 
-interface INotifier
+interface Notifier
 {
     /**
      * Handle notification sending process.

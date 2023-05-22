@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Jwt;
 
-interface JWTInterface
+interface ClientInterface
 {
     /**
      * Convertis et signe un objet PHP ou un tableau en une chaine de charactère JWT.

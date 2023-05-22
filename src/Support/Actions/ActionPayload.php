@@ -13,9 +13,9 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Support\Actions;
 
-use Drewlabs\Contracts\Support\ArrayableInterface;
+use Drewlabs\Contracts\Support\Arrayable;
 
-interface ActionPayload extends ArrayableInterface
+interface ActionPayload extends Arrayable
 {
     /**
      * Returns the value wrapped by the payload object.

@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Support;
 
-interface ArrayableInterface
+interface Arrayable
 {
     /**
      * Returns an array representation of the current instance.

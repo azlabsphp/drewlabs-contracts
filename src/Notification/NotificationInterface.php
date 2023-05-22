@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Notification;
 
-interface INotification
+interface NotificationInterface
 {
     /**
      * Unique identifier of the notification instance.

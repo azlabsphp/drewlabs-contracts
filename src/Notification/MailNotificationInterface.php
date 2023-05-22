@@ -13,6 +13,19 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Notification;
 
-interface ITextMessageNotifier extends INotifier
+interface MailNotificationInterface extends NotificationInterface
 {
+    /**
+     * Returns a comma sperated list of mail attached receivers.
+     *
+     * @return string
+     */
+    public function getCc();
+
+    /**
+     * Returns the mail subject.
+     *
+     * @return string
+     */
+    public function getSubject();
 }

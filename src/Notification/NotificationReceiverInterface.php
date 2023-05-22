@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Notification;
 
-interface INotificationReceiver
+interface NotificationReceiverInterface
 {
     /**
      * Get the unique identifier of the notification receiver.

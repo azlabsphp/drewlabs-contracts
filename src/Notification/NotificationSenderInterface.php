@@ -13,19 +13,19 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Notification;
 
-interface IMailNotification extends INotification
+interface NotificationSenderInterface
 {
     /**
-     * Returns a comma sperated list of mail attached receivers.
+     * Get the name associated with the sender unique identifier.
      *
      * @return string
      */
-    public function getCc();
+    public function getName();
 
     /**
-     * Returns the mail subject.
+     * Returns the notification sender unique identifier.
      *
      * @return string
      */
-    public function getSubject();
+    public function getIdentifier();
 }

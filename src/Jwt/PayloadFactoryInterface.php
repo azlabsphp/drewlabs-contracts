@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Jwt;
 
-use Drewlabs\Contracts\Support\ArrayableInterface;
+use Drewlabs\Contracts\Support\Arrayable;
 
 interface PayloadFactoryInterface
 {
@@ -41,7 +41,7 @@ interface PayloadFactoryInterface
     /**
      * Generate a payload with default claims and user provided custom claims.
      *
-     * @return array|object|ArrayableInterface
+     * @return array|object|Arrayable
      */
     public function make(array $claims = []);
 }

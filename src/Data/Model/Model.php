@@ -13,9 +13,9 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Data\Model;
 
-use Drewlabs\Contracts\Support\ArrayableInterface;
+use Drewlabs\Contracts\Support\Arrayable;
 
-interface Model extends ArrayableInterface
+interface Model extends Arrayable
 {
     /**
      * Returns the primaryKey of the given model.

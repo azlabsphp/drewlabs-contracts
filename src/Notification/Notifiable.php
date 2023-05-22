@@ -18,14 +18,14 @@ interface Notifiable
     /**
      * Returns the content|notification receiver unique identifier. It can be either an email address, a phonenumber, or device unique identifier.
      *
-     * @return INotificationReceiver[]
+     * @return NotificationReceiverInterface[]
      */
     public function getReceivers();
 
     /**
      * Returns the identifier of the notification being sent.
      *
-     * @return INotificationSender
+     * @return NotificationSenderInterface
      */
     public function getSender();
 
@@ -34,12 +34,12 @@ interface Notifiable
      *
      * @return static
      */
-    public function pushReceiver(INotificationReceiver $receiver);
+    public function pushReceiver(NotificationReceiverInterface $receiver);
 
     /**
      * Set the details of the notification sender.
      *
      * @return static
      */
-    public function setSender(INotificationSender $sender);
+    public function setSender(NotificationSenderInterface $sender);
 }
