@@ -83,3 +83,7 @@
 - Renamed `\\Drewlabs\\Contracts\\Support\\DynamicMethodProxyInterface` to `\\Drewlabs\\Contracts\\CallMethodProxyInterface`
 - Removed `Drewlabs\Contracts\Http\BinaryResponseHandler::file` method as it's unused
 - Removed interfaces from the 2fa namespace as most are basically unused
+
+## [0.2.5] 2023-05-23
+
+- Removed JWT related interface as they are moved to jwt package
