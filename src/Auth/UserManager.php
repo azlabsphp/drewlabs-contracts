@@ -43,7 +43,7 @@ interface UserManager
      *
      * @return UserInterface
      */
-    public function create(array $values, array $params, \Closure $callback = null);
+    public function create(array $values, array $params = [], \Closure $callback = null);
 
     /**
      * Helper method for finding Application user by a remember token.

@@ -3,5 +3,5 @@
 - In version 0.3.x move Data interfaces to Query or Database directory []
 - Move CoreValidatable to BaseValidatable [x]
 - Move CoreValidator to AbstractValidator [x]
-- Remove Notification directory contract []
-- Remove all deprecated interface from the auth namespace []
+- Remove Notification directory contract [x]
+- Remove all deprecated interface from the auth namespace [x]
