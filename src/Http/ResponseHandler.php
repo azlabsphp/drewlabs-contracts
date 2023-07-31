@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /*
- * This file is part of the Drewlabs package.
+ * This file is part of the drewlabs namespace.
  *
  * (c) Sidoine Azandrew <azandrewdevelopper@gmail.com>
  *
@@ -13,15 +13,13 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Http;
 
-
 interface ResponseHandler
 {
     /**
      * Controllers Http response formatter.
      *
      * @param mixed $data
-     * @param int $status
-     * @param array $headers
+     * @param int   $status
      *
      * @return mixed
      */
@@ -32,7 +30,6 @@ interface ResponseHandler
      *
      * @param mixed $data
      * @param array $errors
-     * @param bool  $success
      *
      * @return mixed
      */
@@ -40,38 +37,31 @@ interface ResponseHandler
 
     /**
      * Return a Server Error HTTP response  with status 500.
-     * 
-     * @param \Throwable $e 
-     * @param array|null $errors
-     * 
-     * @return mixed 
+     *
+     * @return mixed
      */
     public function error(\Throwable $e, array $errors = null);
 
     /**
      * Return an HTTP Bad Request response  with status >=400 or <=403.
-     * 
+     *
      * @param array|mixed $data
-     * 
-     * @return mixed 
+     *
+     * @return mixed
      */
     public function badRequest($data, int $status = 422);
 
     /**
      * Add status code to the HTTP response.
-     * 
-     * @param int $code
-     * 
-     * @return self 
+     *
+     * @return self
      */
     public function withStatus(int $code);
 
     /**
      * Add headers to the HTTP response.
-     * 
-     * @param array $headers
-     * 
-     * @return self 
+     *
+     * @return self
      */
     public function withHeaders(array $headers);
 }

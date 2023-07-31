@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /*
- * This file is part of the Drewlabs package.
+ * This file is part of the drewlabs namespace.
  *
  * (c) Sidoine Azandrew <azandrewdevelopper@gmail.com>
  *
@@ -17,11 +17,8 @@ interface ViewResponseHandler
 {
     /**
      * Returns a http response a view.
-     * 
-     * @param string $path 
-     * @param array $data
-     * 
-     * @return mixed|string 
+     *
+     * @return mixed|string
      */
     public function view(string $path, array $data = []);
 }

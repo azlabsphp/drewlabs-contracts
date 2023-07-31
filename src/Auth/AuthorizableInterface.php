@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /*
- * This file is part of the Drewlabs package.
+ * This file is part of the drewlabs namespace.
  *
  * (c) Sidoine Azandrew <azandrewdevelopper@gmail.com>
  *
@@ -18,26 +18,26 @@ interface AuthorizableInterface extends HasAbilities
     /**
      * Return the list of authorizations of the instance.
      *
-     * @return string[]|AuthorizationInterface[]
+     * @return string[]
      */
     public function getAuthorizations();
 
     /**
      * Return the list of authorization groups of the instance.
      *
-     * @return string[]|AuthorizationGroupInterface[]
+     * @return string[]
      */
     public function getAuthorizationGroups();
 
     /**
-     * Set the list of authorizations on the AuthorizableInterface instance.
+     * Set the list of authorizations.
      *
      * @return self
      */
     public function setAuthorizations(array $value = []);
 
     /**
-     * Set the list of authorizations groups on the AuthorizableInterface instance.
+     * Set the list of authorizations groups.
      *
      * @return self
      */

@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /*
- * This file is part of the Drewlabs package.
+ * This file is part of the drewlabs namespace.
  *
  * (c) Sidoine Azandrew <azandrewdevelopper@gmail.com>
  *
@@ -17,10 +17,10 @@ interface UnAuthorizedResponseHandler
 {
     /**
      * Convert an authorization exception into a response.
-     * 
-     * @param mixed $request 
-     * @param \Throwable|null $exception 
-     * @return mixed 
+     *
+     * @param mixed $request
+     *
+     * @return mixed
      */
     public function unauthorized($request, \Throwable $exception = null);
 }

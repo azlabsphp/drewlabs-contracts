@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /*
- * This file is part of the Drewlabs package.
+ * This file is part of the drewlabs namespace.
  *
  * (c) Sidoine Azandrew <azandrewdevelopper@gmail.com>
  *
@@ -13,6 +13,9 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Notification;
 
+/**
+ * @deprecated v0.2.x
+ */
 interface IMailNotification extends INotification
 {
     /**

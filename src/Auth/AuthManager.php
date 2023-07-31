@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /*
- * This file is part of the Drewlabs package.
+ * This file is part of the drewlabs namespace.
  *
  * (c) Sidoine Azandrew <azandrewdevelopper@gmail.com>
  *
@@ -23,6 +23,13 @@ interface AuthManager
      * @return bool
      */
     public function authenticate(array $credentials, bool $remember);
+
+    /**
+     * Try authenticating user by login credential.
+     *
+     * @return bool
+     */
+    public function authenticateByLogin(string $username, string $password, bool $remember);
 
     /**
      * Log user out of the application.

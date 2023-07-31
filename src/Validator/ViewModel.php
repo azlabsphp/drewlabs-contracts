@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /*
- * This file is part of the Drewlabs package.
+ * This file is part of the drewlabs namespace.
  *
  * (c) Sidoine Azandrew <azandrewdevelopper@gmail.com>
  *
@@ -15,7 +15,7 @@ namespace Drewlabs\Contracts\Validator;
 
 use ArrayAccess;
 
-interface ViewModel extends CoreValidatable, ArrayAccess
+interface ViewModel extends BaseValidatable, CoreValidatable, ArrayAccess
 {
     /**
      * Merge the object inputs with some new values provided.
@@ -50,9 +50,9 @@ interface ViewModel extends CoreValidatable, ArrayAccess
     public function all($keys = null);
 
     /**
-     * Returns the array/dictionary representation of the current view model
-     * 
-     * @return array 
+     * Returns the array/dictionary representation of the current view model.
+     *
+     * @return array
      */
     public function toArray();
 }

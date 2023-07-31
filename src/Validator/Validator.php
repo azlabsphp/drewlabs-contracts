@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /*
- * This file is part of the Drewlabs package.
+ * This file is part of the drewlabs namespace.
  *
  * (c) Sidoine Azandrew <azandrewdevelopper@gmail.com>
  *
@@ -19,7 +19,7 @@ namespace Drewlabs\Contracts\Validator;
  * @method self validate(\Drewlabs\Contracts\Validator\CoreValidatable $instance, array $values, ?\Closure $callback = null)
  * @method self validate(\Drewlabs\Contracts\Validator\ViewModel $view, ?\Closure $callback = null)
  */
-interface Validator extends CoreValidator
+interface Validator extends AbstractValidator, CoreValidator
 {
     /**
      * Tells the validator to load rules defines on updateRules() method.

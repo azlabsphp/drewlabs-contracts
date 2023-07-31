@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /*
- * This file is part of the Drewlabs package.
+ * This file is part of the drewlabs namespace.
  *
  * (c) Sidoine Azandrew <azandrewdevelopper@gmail.com>
  *
@@ -21,30 +21,29 @@ interface UserManager
     public function get(...$args);
 
     /**
-     * @param int|string|array $query
-     * @param bool             $batch
+     * @param mixed $args
      *
      * @return int|mixed
      */
-    public function delete($query, $batch = false);
+    public function delete(...$args);
 
     /**
      *  Provide functionnality for creating a user.
      *
-     * @param array $params
+     * @param mixed $args
      *
-     * @return IUserModel|DoubleAuthUserInterface
+     * @return UserInterface
      */
-    public function create(array $attributes, $params = [], \Closure $callback = null);
+    public function create(...$args);
 
     /**
      *  Provide functionnality for updating a user using {id}.
      *
-     * @param mixed $id
+     * @param mixed $args
      *
-     * @return IUserModel|DoubleAuthUserInterface
+     * @return UserInterface
      */
-    public function update($id, array $attributes, array $params = [], \Closure $callback = null);
+    public function update(...$args);
 
     /**
      * Helper method for finding Application user by a remember token.
@@ -52,14 +51,37 @@ interface UserManager
      * @param mixed  $id
      * @param string $token
      *
-     * @return IUserModel|DoubleAuthUserInterface
+     * @return UserInterface
      */
     public function findUserByRememberToken($id, $token);
 
     /**
      * Abstarct method declaration for finding an application user by credentials.
      *
-     * @return IUserModel|DoubleAuthUserInterface
+     * @return UserInterface
      */
     public function findUserByCredentials(array $credentials);
+
+    /**
+     * Find application user using login name or user name.
+     *
+     * @return UserInterface
+     */
+    public function findUserByLogin(string $sub);
+
+    /**
+     * Find application user using user id.
+     *
+     * @param string $id
+     *
+     * @return UserInterface
+     */
+    public function findUserById($id);
+
+    /**
+     * Update the user using the remember token value.
+     *
+     * @return void
+     */
+    public function updateUserRememberToken($id, $token);
 }

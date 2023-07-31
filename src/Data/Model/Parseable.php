@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /*
- * This file is part of the Drewlabs package.
+ * This file is part of the drewlabs namespace.
  *
  * (c) Sidoine Azandrew <azandrewdevelopper@gmail.com>
  *
@@ -13,19 +13,9 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Data\Model;
 
+/**
+ * @deprecated v0.2.x Moved methods into model class
+ */
 interface Parseable
 {
-    /**
-     * Get the fillable attributes for the model.
-     *
-     * @return array
-     */
-    public function getFillable();
-
-    /**
-     * Set the fillable attributes for the model.
-     *
-     * @return $this
-     */
-    public function fillable(array $fillable);
 }

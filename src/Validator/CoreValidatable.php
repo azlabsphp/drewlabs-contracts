@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /*
- * This file is part of the Drewlabs package.
+ * This file is part of the drewlabs namespace.
  *
  * (c) Sidoine Azandrew <azandrewdevelopper@gmail.com>
  *
@@ -13,12 +13,9 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Validator;
 
-interface CoreValidatable extends MessageInterface
+/**
+ * @deprecated v0.2.x
+ */
+interface CoreValidatable extends BaseValidatable
 {
-    /**
-     * Build a dictionary of validation rules.
-     *
-     * @return array
-     */
-    public function rules();
 }

@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /*
- * This file is part of the Drewlabs package.
+ * This file is part of the drewlabs namespace.
  *
  * (c) Sidoine Azandrew <azandrewdevelopper@gmail.com>
  *
@@ -13,16 +13,12 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Http;
 
-use Closure;
-
 interface BinaryResponseHandler
 {
     /**
      * Returns a binary response download.
      *
-     * @param string $path
      * @param string $name
-     * @param array  $headers
      *
      * @return mixed
      */
@@ -30,10 +26,8 @@ interface BinaryResponseHandler
 
     /**
      * Return a stream output.
-     * 
-     * @param string $name 
-     * @param Closure $callback 
-     * @return mixed 
+     *
+     * @return mixed
      */
     public function stream(string $name, \Closure $callback);
 }

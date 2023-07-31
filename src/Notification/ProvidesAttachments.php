@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /*
- * This file is part of the Drewlabs package.
+ * This file is part of the drewlabs namespace.
  *
  * (c) Sidoine Azandrew <azandrewdevelopper@gmail.com>
  *
@@ -15,6 +15,9 @@ namespace Drewlabs\Contracts\Notification;
 
 use Psr\Http\Message\StreamInterface;
 
+/**
+ * @deprecated v0.2.x
+ */
 interface ProvidesAttachments
 {
     /**

@@ -11,8 +11,14 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Drewlabs\Contracts\Support\Actions\Exceptions;
+namespace Drewlabs\Contracts\Validator;
 
-class InvalidActionException extends \Exception
+interface BaseValidatable extends MessageInterface
 {
+    /**
+     * Build a dictionary of validation rules.
+     *
+     * @return array
+     */
+    public function rules();
 }

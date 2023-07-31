@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /*
- * This file is part of the Drewlabs package.
+ * This file is part of the drewlabs namespace.
  *
  * (c) Sidoine Azandrew <azandrewdevelopper@gmail.com>
  *
@@ -13,48 +13,9 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Auth;
 
-interface IAuthenticatableProvider
+/**
+ * @deprecated v0.2.x
+ */
+interface IAuthenticatableProvider extends AuthenticatableProvider
 {
-    /**
-     * Retrieve a user based on it id.
-     *
-     * @param mixed $id
-     *
-     * @return Authenticatable
-     */
-    public function findById($id);
-
-    /**
-     * Retrieve a user based on a pre-saved token.
-     *
-     * @param string $token
-     *
-     * @return Authenticatable
-     */
-    public function findByToken(int $id, $token);
-
-    /**
-     * Retrieve user based on a certain credentials.
-     *
-     * @return Authenticatable
-     */
-    public function findByCrendentials(array $credentials);
-
-    /**
-     * Update Remembering token.
-     *
-     * @param string $token
-     *
-     * @return void
-     */
-    public function updateAuthRememberToken(Authenticatable $user, $token);
-
-    /**
-     * Validate a user against a certain credentials.
-     *
-     * @param Authenticatable
-     *
-     * @return bool
-     */
-    public function validateAuthCredentials(Authenticatable $user, array $credentials);
 }

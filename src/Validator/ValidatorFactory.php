@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /*
- * This file is part of the Drewlabs package.
+ * This file is part of the drewlabs namespace.
  *
  * (c) Sidoine Azandrew <azandrewdevelopper@gmail.com>
  *
@@ -13,8 +13,6 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Validator;
 
-use Drewlabs\Contracts\Validator\CoreValidator as Validator;
-
 interface ValidatorFactory
 {
     /**
@@ -22,7 +20,7 @@ interface ValidatorFactory
      *
      * @param array ...$args
      *
-     * @return Validator
+     * @return AbstractValidator|Validator
      */
     public function make(...$args);
 }

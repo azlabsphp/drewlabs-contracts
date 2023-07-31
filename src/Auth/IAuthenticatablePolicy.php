@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /*
- * This file is part of the Drewlabs package.
+ * This file is part of the drewlabs namespace.
  *
  * (c) Sidoine Azandrew <azandrewdevelopper@gmail.com>
  *
@@ -13,63 +13,9 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Auth;
 
-interface IAuthenticatablePolicy
+/**
+ * @deprecated v0.2.x
+ */
+interface IAuthenticatablePolicy extends AuthorizableManager
 {
-    /**
-     * Check if the current authenticated user has a certain authorization group.
-     *
-     * @param string $group
-     *
-     * @return bool
-     */
-    public function hasAuthorizationGroup(AuthorizableInterface $user, $group);
-
-    /**
-     * Checks if the current authenticated user has an authorization group
-     * in a list of authorization group.
-     *
-     * @param string[] $groups
-     *
-     * @return bool
-     */
-    public function hasAuthorizationGroupIn(AuthorizableInterface $user, array $groups);
-
-    /**
-     * Checks if the current authenticated user has all authorization groups
-     * in a list of authorization groups provided.
-     *
-     * @param string[] $groups
-     *
-     * @return bool
-     */
-    public function hasAllAuthorizationGroups(AuthorizableInterface $user, array $groups);
-
-    /**
-     * Check if the current authenticated user has a certain authorization.
-     *
-     * @param string $authorization
-     *
-     * @return bool
-     */
-    public function hasAuthorization(AuthorizableInterface $user, $authorization);
-
-    /**
-     * Checks if the current authenticated user has an authorization
-     * in a list of authorizations provided.
-     *
-     * @param string[] $authorizations
-     *
-     * @return bool
-     */
-    public function hasAuthorizationIn(AuthorizableInterface $user, array $authorizations);
-
-    /**
-     * Checks if the current authenticated user has all authorizations
-     * in a list of authorizations provided.
-     *
-     * @param string[] $authorizations
-     *
-     * @return bool
-     */
-    public function hasAllAuthorizations(AuthorizableInterface $user, array $authorizations);
 }

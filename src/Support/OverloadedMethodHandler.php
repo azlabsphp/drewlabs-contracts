@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /*
- * This file is part of the Drewlabs package.
+ * This file is part of the drewlabs namespace.
  *
  * (c) Sidoine Azandrew <azandrewdevelopper@gmail.com>
  *
@@ -31,7 +31,6 @@ interface OverloadedMethodHandler
 
     /**
      * Call a given function or method with a list of arguments.
-
      *
      * @param mixed $args
      *

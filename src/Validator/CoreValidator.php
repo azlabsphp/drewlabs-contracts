@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /*
- * This file is part of the Drewlabs package.
+ * This file is part of the drewlabs namespace.
  *
  * (c) Sidoine Azandrew <azandrewdevelopper@gmail.com>
  *
@@ -13,29 +13,9 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Validator;
 
-interface CoreValidator
+/**
+ * @deprecated v0.2.x
+ */
+interface CoreValidator extends AbstractValidator
 {
-    /**
-     * Validate values based on the provided rules or view model.
-     *
-     * @throws Drewlabs\Core\Validator\Exceptions\ValidationException
-     *
-     * @return self
-     */
-    public function validate(...$args);
-
-    /**
-     * Return a boolean value that indicate whether
-     * validation was successful or fails.
-     *
-     * @return bool
-     */
-    public function fails();
-
-    /**
-     * Return the list of errors that occurs during validation.
-     *
-     * @return mixed
-     */
-    public function errors();
 }

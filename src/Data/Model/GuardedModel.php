@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /*
- * This file is part of the Drewlabs package.
+ * This file is part of the drewlabs namespace.
  *
  * (c) Sidoine Azandrew <azandrewdevelopper@gmail.com>
  *
@@ -13,28 +13,9 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Data\Model;
 
+/**
+ * @deprecated v0.2.x Moved methods into model class
+ */
 interface GuardedModel
 {
-    /**
-     * Get the guarded attributes for the model.
-     *
-     * @return array
-     */
-    public function getGuarded();
-
-    /**
-     * Set the guarded attributes for the model.
-     *
-     * @return self
-     */
-    public function guard(array $guarded);
-
-    /**
-     * Determine if the given key is guarded.
-     *
-     * @param string $key
-     *
-     * @return bool
-     */
-    public function isGuarded($key);
 }
