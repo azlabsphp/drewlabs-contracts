@@ -22,7 +22,7 @@ interface AuthorizableManager
      *
      * @return bool
      */
-    public function hasAuthorizationGroup(AuthorizableInterface $user, $group);
+    public function hasAuthorizationGroup(AuthorizationsAware $user, $group);
 
     /**
      * Checks if the current authenticated user has all authorization groups
@@ -32,7 +32,7 @@ interface AuthorizableManager
      *
      * @return bool
      */
-    public function hasAuthorizationGroups(AuthorizableInterface $user, array $groups);
+    public function hasAuthorizationGroups(AuthorizationsAware $user, array $groups);
 
     /**
      * Check if the current authenticated user has a certain authorization.
@@ -41,7 +41,7 @@ interface AuthorizableManager
      *
      * @return bool
      */
-    public function hasAuthorization(AuthorizableInterface $user, $authorization);
+    public function hasAuthorization(AuthorizationsAware $user, $authorization);
 
     /**
      * Checks if the current authenticated user has all authorizations
@@ -51,5 +51,5 @@ interface AuthorizableManager
      *
      * @return bool
      */
-    public function hasAuthorizations(AuthorizableInterface $user, array $authorizations);
+    public function hasAuthorizations(AuthorizationsAware $user, array $authorizations);
 }

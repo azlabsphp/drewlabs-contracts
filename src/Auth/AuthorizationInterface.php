@@ -16,16 +16,14 @@ namespace Drewlabs\Contracts\Auth;
 interface AuthorizationInterface
 {
     /**
-     * Return the unique identifier string of the authorization.
-     *
-     * @return string
+     * Returns the string representation of the instance.
      */
-    public function label();
+    public function __toString(): string;
 
     /**
-     * Return the UUID of the authorization.
+     * Return the `id` of the authorization.
      *
      * @return string
      */
-    public function id();
+    public function getKey();
 }

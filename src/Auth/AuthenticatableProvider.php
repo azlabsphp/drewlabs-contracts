@@ -43,12 +43,9 @@ interface AuthenticatableProvider
     /**
      * Try authenticating user by login credential.
      *
-     * @param string $password
-     * @param bool   $remember
-     *
-     * @return bool
+     * @return Authenticatable
      */
-    public function findByLogin(string $username, string $password = null, bool $remember = null);
+    public function findByLogin(string $username);
 
     /**
      * Update Remembering token.
@@ -67,4 +64,11 @@ interface AuthenticatableProvider
      * @return bool
      */
     public function validateAuthCredentials(Authenticatable $user, array $credentials);
+
+    /**
+     * Validate user login secret key.
+     *
+     * @return bool
+     */
+    public function validateAuthSecret(Authenticatable $user, string $secret);
 }

@@ -13,33 +13,19 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Auth;
 
-interface AuthorizableInterface extends HasAbilities
+interface AuthorizationsAware
 {
     /**
      * Return the list of authorizations of the instance.
      *
      * @return string[]
      */
-    public function getAuthorizations();
+    public function getAuthorizations(): array;
 
     /**
      * Return the list of authorization groups of the instance.
      *
      * @return string[]
      */
-    public function getAuthorizationGroups();
-
-    /**
-     * Set the list of authorizations.
-     *
-     * @return self
-     */
-    public function setAuthorizations(array $value = []);
-
-    /**
-     * Set the list of authorizations groups.
-     *
-     * @return self
-     */
-    public function setAuthorizationGroups(array $value = []);
+    public function getAuthorizationGroups(): array;
 }
