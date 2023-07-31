@@ -4,3 +4,4 @@
 - Move CoreValidatable to BaseValidatable [x]
 - Move CoreValidator to AbstractValidator [x]
 - Remove Notification directory contract []
+- Remove all deprecated interface from the auth namespace []
