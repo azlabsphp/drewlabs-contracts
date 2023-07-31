@@ -36,7 +36,7 @@ interface AuthManager
      *
      * @return void
      */
-    public function logout($user);
+    public function logout(Authenticatable $user);
 
     /**
      * Try authenticating user via it identifier and a remember token.
