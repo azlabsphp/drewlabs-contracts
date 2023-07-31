@@ -65,11 +65,4 @@ interface Authenticatable
      * @return mixed
      */
     public function getAuthUserName();
-
-    /**
-     * Return the authenticatable user details.
-     *
-     * @return mixed
-     */
-    public function getUserDetails();
 }
