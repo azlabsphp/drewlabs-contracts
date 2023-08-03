@@ -13,6 +13,9 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Data\DML;
 
+/**
+ * @deprecated v0.2.x Please update code to use `drewlabs/query` implementation as this class will be removed in future release
+ */
 interface DMLProvider
 {
     /**

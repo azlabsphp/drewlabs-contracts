@@ -15,6 +15,9 @@ namespace Drewlabs\Contracts\Data\Model;
 
 use Drewlabs\Contracts\Support\ArrayableInterface;
 
+/**
+ * @deprecated v0.2.x Please update code to use `drewlabs/query` implementation as this class will be removed in future release
+ */
 interface Model extends ArrayableInterface
 {
     /**

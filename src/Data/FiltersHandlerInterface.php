@@ -16,7 +16,7 @@ namespace Drewlabs\Contracts\Data;
 use Drewlabs\Contracts\Data\Filters\FiltersInterface;
 
 /**
- * Interface FiltersHandlerInterface.
+ * @deprecated v0.2.x Please update code to use `drewlabs/query` implementation as this class will be removed in future release
  */
 interface FiltersHandlerInterface
 {

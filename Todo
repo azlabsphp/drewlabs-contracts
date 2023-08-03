@@ -1,7 +1,16 @@
 # Todos
 
+## Version 0.2.x Todos
+
 - In version 0.3.x move Data interfaces to Query or Database directory []
 - Move CoreValidatable to BaseValidatable [x]
 - Move CoreValidator to AbstractValidator [x]
 - Remove Notification directory contract [x]
 - Remove all deprecated interface from the auth namespace [x]
+
+## Version 0.3.x Todos
+
+- Remove `Data` directory source code []
+- Remove `Observable` directory []
+- Remove deprecated Jwt Contracts []
+- Remove deprecated Http Directory Contracts []
