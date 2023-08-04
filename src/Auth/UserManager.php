@@ -16,19 +16,14 @@ namespace Drewlabs\Contracts\Auth;
 interface UserManager
 {
     /**
-     * Remove user from database by user id
-     * 
-     * @param string $id
+     * Remove user from database by user id.
      *
      * @return void
      */
     public function deleteById(string $id);
 
     /**
-     * Update user in database by id
-     *
-     * @param string $id
-     * @param array $values
+     * Update user in database by id.
      *
      * @return UserInterface
      */
@@ -37,8 +32,6 @@ interface UserManager
     /**
      *  Provide functionnality for creating a user.
      *
-     * @param array $values
-     * @param array $params
      * @param \Closure $callback
      *
      * @return UserInterface
