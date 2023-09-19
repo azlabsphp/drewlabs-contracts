@@ -32,7 +32,7 @@ interface ActionResult
      * 
      * @return bool 
      */
-    public function hasValue();
+    public function hasValue(): bool;
 
     /**
      * PHP magic method indirecting calls on the action result to it wrapped instance.
