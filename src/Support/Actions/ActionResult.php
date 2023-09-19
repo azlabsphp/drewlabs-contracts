@@ -13,12 +13,37 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Support\Actions;
 
+/**
+ * @psalm-template T
+ * @template T
+ */
 interface ActionResult
 {
     /**
      * Retuns the value holds in the action result.
      *
-     * @return mixed
+     * @return T
+     * @psalm-return T
      */
     public function value();
+
+    /**
+     * Checks if action result value is defined (a.k.a internal value is not null)
+     * 
+     * @return bool 
+     */
+    public function hasValue();
+
+    /**
+     * PHP magic method indirecting calls on the action result to it wrapped instance.
+     *
+     * @param mixed $name
+     * @param mixed $arguments
+     *
+     * @throws \Error
+     * @throws \BadMethodCallException
+     *
+     * @return mixed
+     */
+    public function __call($name, $arguments);
 }
