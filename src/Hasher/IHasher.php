@@ -13,30 +13,11 @@ declare(strict_types=1);
 
 namespace Drewlabs\Contracts\Hasher;
 
-interface IHasher
+use Drewlabs\Contracts\Hash\Hasher;
+
+/**
+ * @deprecated Use \Drewlabs\Contracts\Hash\Hasher
+ */
+interface IHasher extends Hasher
 {
-    /**
-     * Generate a hash value from a given string.
-     *
-     * @param string $value
-     *
-     * @return string
-     */
-    public function make($value, array $options = []);
-
-    /**
-     * Check if computed hash match a given value.
-     *
-     * @param string $value
-     * @param string $hashed_value
-     */
-    public function check($value, $hashed_value, array $options = []): bool;
-
-    /**
-     * Check if the given hash value has been hashed with given options.
-     *
-     * @param string $hashed_value
-     * @param array  $options
-     */
-    public function needsRehash($hashed_value, $options): bool;
 }

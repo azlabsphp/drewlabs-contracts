@@ -10,7 +10,12 @@
 
 ## Version 0.3.x Todos
 
-- Remove `Data` directory source code []
-- Remove `Observable` directory []
-- Remove deprecated Jwt Contracts []
-- Remove deprecated Http Directory Contracts []
+- Remove `Data` directory source code [x]
+- Remove `Observable` directory [x]
+- Remove deprecated Jwt Contracts [x]
+- Remove deprecated Http Directory Contracts [x]
+
+## Version 0.4.x
+
+- Remove Deprecated support interfaces []
+- Remove deprecated IHasher interface []

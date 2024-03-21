@@ -14,6 +14,8 @@ declare(strict_types=1);
 namespace Drewlabs\Contracts\Support;
 
 /**
+ * @deprecated
+ * 
  * Defines a type that reference methods with optional parameters.
  */
 interface OverloadedPartialMethodHandler extends OverloadedMethodHandler

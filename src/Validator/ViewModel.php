@@ -15,7 +15,7 @@ namespace Drewlabs\Contracts\Validator;
 
 use ArrayAccess;
 
-interface ViewModel extends BaseValidatable, CoreValidatable, ArrayAccess
+interface ViewModel extends BaseValidatable, ArrayAccess
 {
     /**
      * Merge the object inputs with some new values provided.

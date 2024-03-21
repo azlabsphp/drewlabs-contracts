@@ -19,7 +19,7 @@ namespace Drewlabs\Contracts\Validator;
  * @method self validate(\Drewlabs\Contracts\Validator\CoreValidatable $instance, array $values, ?\Closure $callback = null)
  * @method self validate(\Drewlabs\Contracts\Validator\ViewModel $view, ?\Closure $callback = null)
  */
-interface Validator extends AbstractValidator, CoreValidator
+interface Validator extends AbstractValidator
 {
     /**
      * Tells the validator to load rules defines on updateRules() method.
